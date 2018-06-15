@@ -1,0 +1,13 @@
+.botoes{
+	margin: 0 auto;
+	text-align: center;
+}
+
+.imagens {
+	width: 20%;
+	height: 20%;
+}
+
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
