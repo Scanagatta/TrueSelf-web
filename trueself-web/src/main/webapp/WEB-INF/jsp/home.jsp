@@ -9,10 +9,10 @@
     <title>TrueSelf</title>
     <meta charset="US-ASCII">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Andika" />
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>" > 
+		<link rel="stylesheet" href="<c:url value='/css/style.css'/>" > 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
+ 		<script type="text/javascript" src="<c:url value='/js/bootstrap.js'/>"></script>
   </head>
   <body>
     <nav class="navbar navbar-default">
