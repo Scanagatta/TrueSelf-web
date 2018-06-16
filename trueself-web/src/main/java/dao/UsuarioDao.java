@@ -1,6 +1,7 @@
 package dao;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
 import model.Usuario;
@@ -15,21 +16,26 @@ public class UsuarioDao extends GenericDAO<Usuario> {
 		conectar();
 		try {
 			TypedQuery<String> tq = em.createNamedQuery(Usuario.PESQUISAR_LOGIN, String.class);
-			tq.setParameter(1,email);
+			tq.setParameter(1, email);
 			return tq.getSingleResult();
+		} catch (NoResultException e) {
+			return null;
+
 		} finally {
 			desconectar();
 		}
 	}
 
 	public String pesquisarSenha(String email) {
-			conectar();
-			try {
-				TypedQuery<String> tq = em.createNamedQuery(Usuario.PESQUISAR_SENHA, String.class);
-				tq.setParameter(1,email);
-				return tq.getSingleResult();
-			} finally {
-				desconectar();
-			}
+		conectar();
+		try {
+			TypedQuery<String> tq = em.createNamedQuery(Usuario.PESQUISAR_SENHA, String.class);
+			tq.setParameter(1, email);
+			return tq.getSingleResult();
+		} catch (NoResultException e) {
+			return null;
+		} finally {
+			desconectar();
+		}
 	}
 }

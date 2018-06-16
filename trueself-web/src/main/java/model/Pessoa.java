@@ -21,7 +21,7 @@ public class Pessoa extends Usuario implements MeuCodigo {
 	private Integer codigo;
 	@Column
 	private String sexo;
-	@Temporal(TemporalType.DATE)
+	@Column
 	private LocalDate dataNascimento;
 	@Column
 	private String estadoCivil;

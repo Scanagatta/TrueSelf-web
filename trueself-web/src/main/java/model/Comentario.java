@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -22,10 +23,12 @@ public class Comentario implements MeuCodigo{
 	private String comentario;
 	// usuario que envia a mensagem
 	// nao sei o que anotar
+	@ManyToOne
 	private Usuario usuarioEnvia;
 	// usuario que recebe a mensagem
+	@ManyToOne
 	private Usuario usuarioRecebe;
-	@Temporal(TemporalType.DATE)
+	@Column
 	private LocalDate data;
 	// vai receber o index da imagem
 	@Column

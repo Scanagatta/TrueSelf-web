@@ -9,55 +9,54 @@ import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import dao.UsuarioDao;
 import model.Usuario;
+
 @Controller
 @Path("/index")
 public class IndexController {
 
-		@Inject
-		private Result result;
-		
-		@Inject
-		private UsuarioDao dao;
-		
-		private Usuario usuarioLogado;
-		
-		
-		@Get("/index")
-		public void index() {
-		}
-		
-		
-		@Post("/login")
-		public void login(Usuario usuario) {
-			if(dao.pesquisarLogin(usuario.getEmail()) != null) {
-				if(dao.pesquisarSenha(usuario.getEmail()).equals(usuario.getSenha()) ) {
-					usuarioLogado = usuario;
-					result.redirectTo(this).home();
-				} else {
-					//erro senha incorreta
-				}
+	@Inject
+	private Result result;
+
+	@Inject
+	private UsuarioDao dao;
+
+	private Usuario usuarioLogado;
+
+	@Get("/index")
+	public void index() {
+	}
+
+	@Post("/login")
+	public void login(Usuario usuario) {
+		if (dao.pesquisarLogin(usuario.getEmail()) != null) {
+			if (dao.pesquisarSenha(usuario.getEmail()).equals(usuario.getSenha())) {
+				usuarioLogado = usuario;
+				result.redirectTo(this).home();
 			} else {
-				//erro email nao existe
+				// erro senha incorreta
 			}
+		} else {
+			// erro email nao existe
 		}
-		
-		@Post("/cadastrar")
-		public void cadastrar(Usuario usuario) {
-			if(dao.pesquisarLogin(usuario.getEmail()).equals(null)) {
-				if(usuario.getSenha().equals(usuario.getConfirmaSenha())) {
-					dao.salvar(usuario);
-					usuarioLogado = usuario;
-					result.redirectTo(this).home();
-				} else {
-					//erro de senha
-				}
+	}
+
+	@Post("/cadastrar")
+	public void cadastrar(Usuario usuario) {
+		if (dao.pesquisarLogin(usuario.getEmail()) == null) {
+			if (usuario.getSenha().equals(usuario.getConfirmaSenha())) {
+				dao.salvar(usuario);
+				usuarioLogado = usuario;
+				result.redirectTo(this).home();
 			} else {
-				//erro email ja cadastrado
+				// erro de senha
 			}
+		} else {
+			// erro email ja cadastrado
 		}
-	
-		@Get("/home")
-		public void home(){
-			result.include("usuarioLogado", usuarioLogado);
-		}
+	}
+
+	@Get("/home")
+	public void home() {
+		result.include("usuarioLogado", usuarioLogado);
+	}
 }

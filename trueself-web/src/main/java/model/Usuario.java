@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 import dao.MeuCodigo;
 
@@ -44,7 +45,7 @@ public class Usuario implements MeuCodigo {
 	private Integer qtdDemonio;
 	@Column(nullable = false)
 	private Integer qtdAnjo;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<Comentario> comentarios;
 	@Column(nullable = false)
 	private Integer tipo;
