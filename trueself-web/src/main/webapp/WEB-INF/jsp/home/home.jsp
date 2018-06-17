@@ -70,8 +70,8 @@
               </div>
               <div class="col-xs-12">
                 <dl class="dl-horizontal text-center">
-                  <dt>Data de Nascimento</dt>
-                  <dd></dd>
+                  <dt>Telefone</dt>
+                  <dd>${usuarioLogado.telefone}</dd>
                   <dt>Cidade</dt>
                   <dd>${usuarioLogado.cidade}</dd>
                   <dt>Email</dt>
