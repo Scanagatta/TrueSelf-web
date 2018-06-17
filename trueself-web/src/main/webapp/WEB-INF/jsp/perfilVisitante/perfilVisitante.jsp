@@ -93,7 +93,14 @@
                   </tr>
                 </table>
               </div>
-              <textarea rows="3" cols="1" placeholder="comente aqui"></textarea>
+             <div class="col-xs-12 col-sm-6">
+                <form action="" method="post">
+                  <div class="form-group">
+                    <textarea placeholder="comente aqui"></textarea>
+                    <button class="btn" type="submit" >Comentar</button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
