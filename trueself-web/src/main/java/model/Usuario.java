@@ -18,7 +18,8 @@ import dao.MeuCodigo;
 @Entity
 @NamedQueries({ @NamedQuery(name = Usuario.PESQUISAR_LOGIN, query = "select email from Usuario where email = ?1"),
 		@NamedQuery(name = Usuario.PESQUISAR_SENHA, query = "select senha from Usuario where email = ?1")})
-		// @NamedQuery(name=Usuario.PESQUISAR_USUARIO, query = "select * from Usuario where email = ?1")})
+		@NamedQuery(name = Usuario.PESQUISAR_USUARIO, query = "select nome from Usuario where email = ?1")
+
 public class Usuario implements MeuCodigo {
 
 	public static final String PESQUISAR_LOGIN = "pesquisaLogin";

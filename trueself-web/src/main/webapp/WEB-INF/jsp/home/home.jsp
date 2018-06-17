@@ -75,7 +75,7 @@
                   <dt>Cidade</dt>
                   <dd>${usuarioLogado.cidade}</dd>
                   <dt>Email</dt>
-                  <dd>sfdsd</dd>
+                  <dd>${usuarioLogado.email}</dd>
                 </dl>
               </div>
             </div>

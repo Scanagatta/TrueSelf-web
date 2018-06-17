@@ -19,7 +19,7 @@ public class IndexController {
 
 	@Inject
 	private UsuarioDao dao;
-	
+
 	private static Usuario usuarioLogado;
 
 	@Get("/index")
@@ -30,8 +30,12 @@ public class IndexController {
 	public void login(Usuario usuario) {
 		if (dao.pesquisarLogin(usuario.getEmail()) != null) {
 			if (dao.pesquisarSenha(usuario.getEmail()).equals(usuario.getSenha())) {
-				//usuarioLogado = dao.pesquisarUsuario(usuario.getEmail());
+				usuario.setNome(dao.pesquisarUsuario(usuario.getEmail()));
+	
+				usuarioLogado = usuario;
+
 				result.redirectTo(this).home();
+				
 			} else {
 				// erro senha incorreta
 			}
@@ -59,11 +63,11 @@ public class IndexController {
 	public void home() {
 		result.include("usuarioLogado", usuarioLogado);
 		result.redirectTo(HomeController.class).home();
+
 	}
 
 	public static Usuario getUsuarioLogado() {
 		return usuarioLogado;
 	}
-	
-	
+
 }
