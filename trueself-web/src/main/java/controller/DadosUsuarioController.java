@@ -7,10 +7,11 @@ import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
 import dao.UsuarioDao;
+import model.Usuario;
 
 @Controller
-@Path("/home")
-public class HomeController {
+@Path("/dadosUsuario")
+public class DadosUsuarioController {
 
 	@Inject
 	private Result result;
@@ -18,15 +19,15 @@ public class HomeController {
 	@Inject
 	private UsuarioDao dao;
 
-	@Get("/home")
-	public void home() {
-
-	}
-
 	@Get("/perfil")
 	public void perfil() {
-		result.include("usuarioLogado", IndexController.getUsuarioLogado());
-		result.redirectTo(DadosUsuarioController.class).perfil();
+	}
+
+	@Get("/alterar")
+	public void alterar(Usuario usuario) {
+		dao.salvar(usuario);
+		result.redirectTo(HomeController.class).home();
+
 	}
 
 }

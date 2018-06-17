@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="perfil.html">Perfil</a></li>
+            <li><a href="perfil">Perfil</a></li>
           </ul>
           <form class="navbar-form navbar-right" action="/action_page.php">
             <div class="form-group">

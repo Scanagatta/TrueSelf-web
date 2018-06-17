@@ -3,9 +3,7 @@ package controller;
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
-import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
-import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 
 @Controller
@@ -15,8 +13,8 @@ public class EmpresaController {
 	@Inject
 	private Result result;
 
-	// tem que ter sempre esse primeiro metodo em branco é a primeira URL
-	// ele vai ir para a pag jsp onde de lá o form envia os dados para o metodo
+	// tem que ter sempre esse primeiro metodo em branco ï¿½ a primeira URL
+	// ele vai ir para a pag jsp onde de lï¿½ o form envia os dados para o metodo
 	// cadastrar
 //	@Get("/formulario")
 //	public void formulario() {

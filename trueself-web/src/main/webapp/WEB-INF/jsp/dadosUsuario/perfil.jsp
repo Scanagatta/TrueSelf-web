@@ -57,14 +57,14 @@
 					
 					<div class="row">
 						<div class="col-xs-12 col-sm-9">
-							<form action="dashboard.html" method="get">
+							<form action="alterar" method="post">
 								<div class="form-group">
 									<label for="inputNome">Nome Completo</label>
-									<input type="text" class="form-control" id="inputNome" placeholder="nome completo" required="required">
+									<input type="text" class="form-control" id="inputNome" placeholder="nome completo" required="required" value="${usuarioLogado.nome}">
 								</div>
 								<div class="form-group">
 									<label for="inputEmail">Email</label>
-									<input type="email" id="inputEmail" class="form-control" placeholder="e-mail" required="required">
+									<input type="email" id="inputEmail" class="form-control" placeholder="e-mail" required="required" value="${usuarioLogado.email}">
 								</div>
 								<div class="form-group">
 									<label for="rdSexo">Sexo</label>
@@ -76,7 +76,7 @@
 								</div>
 								<div class="form-group">
 									<label for="inputData">Data de Nascimento</label>
-									<input type="date" name="" id="inputData" class="form-control">
+									<input type="date" name="" id="inputData" class="form-control" >
 								</div>
 								<div class="form-group">
 									<label for="inputEstadoCivil">Estado Civil</label>
