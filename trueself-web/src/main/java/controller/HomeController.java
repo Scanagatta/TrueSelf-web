@@ -20,6 +20,7 @@ public class HomeController {
 	
 	@Get("/home")
 	public void home() {
+		
 	}
 	
 }

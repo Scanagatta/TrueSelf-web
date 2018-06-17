@@ -8,14 +8,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 import dao.MeuCodigo;
 
 @Entity
-public class Comentario implements MeuCodigo{
+public class Comentario implements MeuCodigo {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer codigo;
 	@Column
 	private String comentario;
@@ -47,16 +49,16 @@ public class Comentario implements MeuCodigo{
 		this.classificacao = classificacao;
 	}
 
-//	public Image getImagemClassificacao() {
-//		if (getClassificacao() == null) {
-//			return null;
-//		}
-//		InputStream input = TelaPerfilDonoController.class
-//				.getResourceAsStream("image" + (getClassificacao() + 1) + ".png");
-//		// coloca a imagem em um image
-//		Image imagem = new Image(input);
-//		return imagem;
-//	}
+	// public Image getImagemClassificacao() {
+	// if (getClassificacao() == null) {
+	// return null;
+	// }
+	// InputStream input = TelaPerfilDonoController.class
+	// .getResourceAsStream("image" + (getClassificacao() + 1) + ".png");
+	// // coloca a imagem em um image
+	// Image imagem = new Image(input);
+	// return imagem;
+	// }
 
 	public String getComentario() {
 		return comentario;
