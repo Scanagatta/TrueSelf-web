@@ -55,25 +55,25 @@
           <div class="row">
             <div class="col-xs-12 col-sm-6">
               <blockquote>
-                <h1>Nome</h1>
+                <h1>${usuarioLogado.nome}</h1>
               </blockquote>
               <img src="https://www.allkpop.com/upload/2017/01/af_org/dindin-black-pink-bewhy_1484083826_af_org.jpg" class="col-sm-6 img-responsive">
               <div class="col-xs-12 col-sm-6">
                 <dl class="dl-horizontal text-center">
                   <dt><img src="https://png.icons8.com/color/50/000000/angel.png" alt="" class="img-responsive"></dt>
-                  <dd>Quantidade Anjo </dd>
+                  <dd>${usuarioLogado.qtdAnjo}</dd>
                   <dt><img src="https://png.icons8.com/color/50/000000/lucifer.png" alt="" class="img-responsive"></dt>
-                  <dd> Quantidade</dd>
+                  <dd>${usuarioLogado.qtdDemonio}</dd>
                   <dt><img src="https://png.icons8.com/flat_round/50/000000/question-mark.png" alt="" class="img-responsive"></dt>
-                  <dd>Quantidade ?</dd>
+                  <dd>${usuarioLogado.qtdNeutro}</dd>
                 </dl>
               </div>
               <div class="col-xs-12">
                 <dl class="dl-horizontal text-center">
-                  <dt>Idade</dt>
-                  <dd>sgd</dd>
-                  <dt>Sexo</dt>
-                  <dd>sg</dd>
+                  <dt>Data de Nascimento</dt>
+                  <dd></dd>
+                  <dt>Cidade</dt>
+                  <dd>${usuarioLogado.cidade}</dd>
                   <dt>Email</dt>
                   <dd>sfdsd</dd>
                 </dl>
@@ -85,18 +85,18 @@
                 <table class="table table-hover">
                   <thead>
                     <tr>
+                      <td>Data</td>
                       <td>Comentario</td>
                       <td>Avaliacao</td>
                     </tr>
                   </thead>
-                  <tr>
-                    <td>iadshiasdvisdvikdnbsdvbdvssjvjksdzbvjksdzbvgusvhbsbvju</td>
-                    <td><button class="btn btn-xs glyphicon glyphicon-option-vertical"></button></td>
-                  </tr>
-                  <tr>
-                    <td>iadshiasdvisdvikdnbsdvbdvssjvjksdzbvjksdzbvgusvhbsbvju</td>
-                    <td><button class="btn btn-xs glyphicon glyphicon-option-vertical"></button></td>
-                  </tr>
+                  <c:forEach var="comentario" items="${usuarioLogado.comentarios}">
+					<tr>
+						<td>${comentario.data}</td>
+						<td>${comentario.comentario}</td>
+						<td><button class="btn btn-xs glyphicon glyphicon-option-vertical"></button></td>
+					</tr>
+				</c:forEach>
                 </table>
               </div>
             </div>

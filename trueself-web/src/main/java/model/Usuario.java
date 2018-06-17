@@ -9,7 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -18,12 +17,14 @@ import dao.MeuCodigo;
 
 @Entity
 @NamedQueries({ @NamedQuery(name = Usuario.PESQUISAR_LOGIN, query = "select email from Usuario where email = ?1"),
-		@NamedQuery(name = Usuario.PESQUISAR_SENHA, query = "select senha from Usuario where email = ?1") })
+		@NamedQuery(name = Usuario.PESQUISAR_SENHA, query = "select senha from Usuario where email = ?1")})
+		// @NamedQuery(name=Usuario.PESQUISAR_USUARIO, query = "select * from Usuario where email = ?1")})
 public class Usuario implements MeuCodigo {
 
 	public static final String PESQUISAR_LOGIN = "pesquisaLogin";
 	public static final String PESQUISAR_SENHA = "pesquisaSenha";
-
+	public static final String PESQUISAR_USUARIO = "pesquisaUsuario";
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer codigo;
