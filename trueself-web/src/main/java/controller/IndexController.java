@@ -30,12 +30,11 @@ public class IndexController {
 	public void login(Usuario usuario) {
 		if (dao.pesquisarLogin(usuario.getEmail()) != null) {
 			if (dao.pesquisarSenha(usuario.getEmail()).equals(usuario.getSenha())) {
-				usuario.setNome(dao.pesquisarUsuario(usuario.getEmail()));
-	
-				usuarioLogado = usuario;
+
+				usuarioLogado = dao.pesquisarUsuario(usuario.getEmail());
 
 				result.redirectTo(this).home();
-				
+
 			} else {
 				// erro senha incorreta
 			}

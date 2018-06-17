@@ -39,13 +39,10 @@ public class UsuarioDao extends GenericDAO<Usuario> {
 		}
 	}
 
-	// fazer um metodo que pegue todos os dados do usuario e popule em um objeto
-	// usuario
-
-	public String pesquisarUsuario(String email) {
+	public String pesquisarNomeUsuario(String email) {
 		conectar();
 		try {
-			TypedQuery<String> tq = em.createNamedQuery(Usuario.PESQUISAR_USUARIO, String.class);
+			TypedQuery<String> tq = em.createNamedQuery(Usuario.PESQUISAR_NOMEUSUARIO, String.class);
 			tq.setParameter(1, email);
 			return tq.getSingleResult();
 		} catch (NoResultException e) {
@@ -55,6 +52,21 @@ public class UsuarioDao extends GenericDAO<Usuario> {
 		}
 	}
 
+	// fazer um metodo que pegue todos os dados do usuario e popule em um objeto
+	// usuario
 
+	public Usuario pesquisarUsuario(String email) {
+		conectar();
+		try {
+			TypedQuery<Integer> tq = em.createNamedQuery(Usuario.PESQUISAR_CODIGO, Integer.class);
+			tq.setParameter(1, email);
+			Usuario usuario = em.find(Usuario.class, tq.getSingleResult());
+			return usuario;
+		} catch (NoResultException e) {
+			return null;
+		} finally {
+			desconectar();
+		}
+	}
 
 }
