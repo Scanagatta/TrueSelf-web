@@ -37,9 +37,11 @@ public class IndexController {
 
 			} else {
 				// erro senha incorreta
+				result.redirectTo(this).index();
 			}
 		} else {
 			// erro email nao existe
+			result.redirectTo(this).index();
 		}
 	}
 
@@ -52,9 +54,11 @@ public class IndexController {
 				result.redirectTo(this).home();
 			} else {
 				// erro de senha
+				result.redirectTo(this).index();
 			}
 		} else {
 			// erro email ja cadastrado
+			result.redirectTo(this).index();
 		}
 	}
 

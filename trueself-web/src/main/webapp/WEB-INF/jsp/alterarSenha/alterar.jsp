@@ -29,8 +29,8 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="dashboard.html">Home</a></li>
-						<li><a href="#">Perfil</a></li>
+						<li><a href="home">Home</a></li>
+						<li><a href="perfil">Perfil</a></li>
 					</ul>
 					<form class="navbar-form navbar-right" action="/action_page.php">
 						<div class="form-group">
@@ -43,7 +43,7 @@
 							<ul class="dropdown-menu">
 								<li class="active"><a href="#">Alterar senha</a></li>
 								<li role="separator" class="divider"></li>
-								<li><a href="index.html">Sair</a></li>
+								<li><a href="sair">Sair</a></li>
 							</ul>
 						</li>
 					</ul>
