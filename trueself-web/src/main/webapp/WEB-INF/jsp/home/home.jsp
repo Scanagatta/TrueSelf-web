@@ -44,7 +44,7 @@
               <ul class="dropdown-menu">
                 <li><a href="alterar.html">Alterar senha</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="index.html">Sair</a></li>
+                <li><a href="sair">Sair</a></li>
               </ul>
             </li>
           </ul>

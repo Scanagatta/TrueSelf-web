@@ -29,4 +29,9 @@ public class HomeController {
 		result.redirectTo(DadosUsuarioController.class).perfil();
 	}
 
+	@Get("/sair")
+	public void sair() {
+		result.redirectTo(IndexController.class).index();
+
+	}
 }
