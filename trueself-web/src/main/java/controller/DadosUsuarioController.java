@@ -22,7 +22,7 @@ public class DadosUsuarioController {
 	@Get("/perfil")
 	public void perfil() {
 	}
-	
+
 	@Get("/home")
 	public void home() {
 		result.include("usuarioLogado", IndexController.getUsuarioLogado());
@@ -35,10 +35,16 @@ public class DadosUsuarioController {
 		result.redirectTo(HomeController.class).home();
 
 	}
-	
+
 	@Get("/sair")
 	public void sair() {
 		result.redirectTo(IndexController.class).index();
+
+	}
+
+	@Get("/alterarSenha")
+	public void alterarSenha() {
+		result.redirectTo(AlterarSenhaController.class).alterar();
 
 	}
 	

@@ -34,4 +34,10 @@ public class HomeController {
 		result.redirectTo(IndexController.class).index();
 
 	}
+
+	@Get("/alterarSenha")
+	public void alterarSenha() {
+		result.redirectTo(AlterarSenhaController.class).alterar();
+
+	}
 }

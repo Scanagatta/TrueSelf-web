@@ -57,25 +57,21 @@
 					
 					<div class="row">
 						<div class="col-xs-12 col-sm-9">
-							<form action="dashboard.html" method="get">
+							<form action="alterarSenha" method="get">
 								<div class="form-group">
 									<label for="inputOldSenha">Senha Antiga</label>
 									<input type="password" class="form-control" id="inputOldSenha" placeholder="senha antiga" required="required">
 								</div>
 								<div class="form-group">
-									<label for="inputConfOldSenha">Confirmar Senha Antiga</label>
-									<input type="password" id="inputConfOldSenha" class="form-control" placeholder="confirmar senha antiga" required="required">
-								</div>
-								<div class="form-group">
 									<label for="inputNewSenha">Nova Senha</label>
-									<input type="password" id="inputNewSenha" class="form-control" placeholder="nova senha">
+									<input type="password" id="inputNewSenha" class="form-control" placeholder="nova senha" name="usuario.senha">
 								</div>
 								<div class="form-group">
 									<label for="inputConfNewSenha">Confirmar Nova Senha</label>
-									<input type="password" id="inputConfNewSenha" class="form-control" placeholder="confirmar nova senha">
+									<input type="password" id="inputConfNewSenha" class="form-control" placeholder="confirmar nova senha" name="usuario.confirmaSenha">
 								</div>
 								<ul class="pager">
-									<li class="next"><a href="#">Salvar</a></li>
+								<button class="btn btn-lg btn-primary btn-block" type="submit" value="salvar">salvar</button>
 								</ul>
 							</form>
 						</div>
