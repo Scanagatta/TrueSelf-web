@@ -36,11 +36,13 @@ public class IndexController {
 				result.redirectTo(this).home();
 
 			} else {
-				// erro senha incorreta
+				String senha = "vazia";
+				result.include("senhaIncorreta", senha);
 				result.redirectTo(this).index();
 			}
 		} else {
-			// erro email nao existe
+			String email = "vazio";
+			result.include("emailNaoExiste", email);
 			result.redirectTo(this).index();
 		}
 	}
