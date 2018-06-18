@@ -57,7 +57,7 @@
 					
 					<div class="row">
 						<div class="col-xs-12 col-sm-9">
-							<form action="dashboard.html" method="get">
+							<form action="alterar" method="post">
 								<div class="form-group">
 									<label for="inputNome">Nome</label>
 									<input type="text" class="form-control" id="inputNome" placeholder="nome completo" required="required">
@@ -101,9 +101,9 @@
 									<label for="inputSite">Site</label>
 									<input type="text" id="inputSite" class="form-control" placeholder="site">
 								</div>
-								<ul class="pager">
-									<li class="next"><a href="#">Salvar</a></li>
-								</ul>
+								<div class="form-group">
+									<input class="btn btn-cadastrar" type="submit" value="salvar">
+								</div>
 							</form>
 						</div>
 					</div>

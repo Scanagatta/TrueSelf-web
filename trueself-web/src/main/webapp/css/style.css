@@ -11,3 +11,52 @@
 @-moz-document url-prefix() {
   fieldset { display: table-cell; }
 }
+
+body{
+	background-color: #FEFEFF;
+}
+
+
+.nav > li > a:focus, .nav > li > a:hover{
+	background-color: #FE654F;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover{
+	background-color: #FED18C;
+}
+
+.paginas{
+	background-color:#FED99B;
+}
+
+.btn-cadastrar{
+	background-color: #FE654F;
+	color: #D6EFFF;
+}
+
+input, .form-group input, .table-hover tbody tr:hover td, .table-hover tbody tr:hover th,select {
+	background-color: #D6EFFF;
+}
+
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover,
+ .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover{
+	background-color: #FED18C;
+}
+
+.navbar-default, ul .dropdown-menu {
+	background-color: #FED99B;
+	color: #FE654F;
+}
+
+h1, a, .navbar-default .navbar-brand, .navbar-default .navbar-brand,.nav.navbar-nav.navbar-right li a, .nav.navbar-nav li a , .navbar-header a .navbar-brand, dl dt{
+    color: #FE654F;
+}
+
+dl dd, .table-responsive{
+	color: #D6EFFF;
+}
+
+blockquote{
+	border-left:5px solid #FED18C;
+}

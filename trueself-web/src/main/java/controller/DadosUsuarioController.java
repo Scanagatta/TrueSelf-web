@@ -19,6 +19,10 @@ public class DadosUsuarioController {
 	@Inject
 	private UsuarioDao dao;
 
+	@Get("/empresa")
+	public void empresa() {
+	}
+	
 	@Get("/perfil")
 	public void perfil() {
 	}

@@ -80,12 +80,12 @@
 								</div>
 								<div class="form-group">
 									<label for="inputEstadoCivil">Estado Civil</label>
-									<input type="text" id="inputEstadoCivil" class="form-control" placeholder="estado civil">
+									<input type="text" id="inputEstadoCivil" class="form-control" placeholder="estado civil" >
 								</div>
 								<div class="row">
 									<div class="form-group col-sm-10">
 										<label for="inputCidade">Cidade</label>
-										<input type="text" class="form-control" id="inputCidade" placeholder="Cidade">
+										<input type="text" class="form-control" id="inputCidade" placeholder="Cidade" value="${usuarioLogado.cidade}">
 									</div>
 									<div class="form-group col-sm-2">
 										<label for="inputEstado">Estado</label>
@@ -97,7 +97,7 @@
 								</div>
 								<div class="form-group">
 									<label for="inputTelefone">Telefone</label>
-									<input type="tel" id="inputTelefone" class="form-control" placeholder="telefone">
+									<input type="tel" id="inputTelefone" class="form-control" placeholder="telefone" value="${usuarioLogado.telefone}">
 								</div>
 								<ul class="pager">
 									<li class="next"><a href="#">Salvar</a></li>

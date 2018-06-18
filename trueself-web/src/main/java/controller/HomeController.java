@@ -15,9 +15,6 @@ public class HomeController {
 	@Inject
 	private Result result;
 
-	@Inject
-	private UsuarioDao dao;
-
 	@Get("/home")
 	public void home() {
 
@@ -25,8 +22,13 @@ public class HomeController {
 
 	@Get("/perfil")
 	public void perfil() {
-		result.include("usuarioLogado", IndexController.getUsuarioLogado());
-		result.redirectTo(DadosUsuarioController.class).perfil();
+		if(IndexController.getUsuarioLogado().getTipo() == 1) {
+			result.redirectTo(DadosUsuarioController.class).perfil();
+			result.include("usuarioLogado", IndexController.getUsuarioLogado());
+		} else if(IndexController.getUsuarioLogado().getTipo() == 2) {
+			result.redirectTo(DadosUsuarioController.class).empresa();
+			result.include("usuarioLogado", IndexController.getUsuarioLogado());
+		}
 	}
 
 	@Get("/sair")

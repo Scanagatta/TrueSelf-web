@@ -15,10 +15,15 @@
 		<script type="text/javascript" src="<c:url value='/js/bootstrap.js'/>"></script>
 	</head>
 	<body>
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
+			<div class="text col-xs-12">
+					<h1>TrueSelf</h1>
+				</div>
 				<div class="col-xs-12 col-sm-6">
-					<img src="https://www.allkpop.com/upload/2017/01/af_org/dindin-black-pink-bewhy_1484083826_af_org.jpg" class="img-responsive">
+				<div>
+				<img src="https://www.allkpop.com/upload/2017/01/af_org/dindin-black-pink-bewhy_1484083826_af_org.jpg" class="img-responsive">
+				</div>		
 				</div>
 				<ul class="nav nav-tabs col-xs-12 col-sm-6">
 					<li class="active col-xs-6"><a href="#first-tab" data-toggle="tab">Login</a></li>
@@ -26,7 +31,7 @@
 				</ul>
 				<div class="tab-content">
 					<div class="tab-pane active in" id="first-tab">
-						<div class="col-xs-12 col-sm-6">
+						<div class="col-xs-12 col-sm-6 paginas">
 							<form action="login" method="post">
 								<hr>
 								<div class="form-group botoes">
@@ -52,12 +57,12 @@
 									</label>
 								</div>
 								<hr>
-								<button class="btn btn-lg btn-primary btn-block" type="submit" value="login">Entrar</button>
+								<button class="btn btn-lg btn-cadastrar btn-block" type="submit" value="login">Entrar</button>
 							</form>
 						</div>
 					</div>
 					<div class="tab-pane" id="second-tab">
-						<div class="col-xs-12 col-sm-6">
+						<div class="col-xs-12 col-sm-6 paginas">
 							<form action="cadastrar" method="post">
 								<div class="form-group text-center">
 									<div class="radio radio-inline" id="rdUsuario">
@@ -89,7 +94,7 @@
 									</label>
 								</div>
 								<hr>
-								<button class="btn btn-lg btn-primary btn-block" type="submit" value="cadastrar">Cadastrar</button>
+								<button class="btn btn-lg btn-cadastrar btn-block" type="submit" value="cadastrar">Cadastrar</button>
 								<br>
 							</form>
 						</div>
