@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
+import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import dao.UsuarioDao;
 import model.Usuario;
@@ -33,23 +34,21 @@ public class DadosUsuarioController {
 		result.redirectTo(HomeController.class).home();
 	}
 
-	@Get("/alterar")
+	@Post("/alterar")
 	public void alterar(Usuario usuario) {
 		dao.salvar(usuario);
+		result.include("usuarioLogado", IndexController.getUsuarioLogado());
 		result.redirectTo(HomeController.class).home();
-
 	}
 
 	@Get("/sair")
 	public void sair() {
 		result.redirectTo(IndexController.class).index();
-
 	}
 
 	@Get("/alterarSenha")
 	public void alterarSenha() {
 		result.redirectTo(AlterarSenhaController.class).alterar();
-
 	}
 	
 	

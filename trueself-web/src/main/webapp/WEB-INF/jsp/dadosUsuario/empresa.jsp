@@ -29,7 +29,7 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="dashboard.html">Home</a></li>
+						<li><a href="home">Home</a></li>
 						<li class="active"><a href="#">Perfil</a></li>
 					</ul>
 					<form class="navbar-form navbar-right" action="/action_page.php">
@@ -41,9 +41,9 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="alterar.html">Alterar senha</a></li>
+								<li><a href="alterarSenha">Alterar senha</a></li>
 								<li role="separator" class="divider"></li>
-								<li><a href="index.html">Sair</a></li>
+								<li><a href="index">Sair</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -54,36 +54,35 @@
 					<blockquote>
 						<h1>Meu Perfil</h1>
 					</blockquote>
-					
 					<div class="row">
 						<div class="col-xs-12 col-sm-9">
 							<form action="alterar" method="post">
 								<div class="form-group">
 									<label for="inputNome">Nome</label>
-									<input type="text" class="form-control" id="inputNome" placeholder="nome completo" required="required">
+									<input type="text" name="usuario.nome" class="form-control" id="inputNome" placeholder="nome completo" value="${usuarioLogado.nome}" required="required">
 								</div>
 								<div class="form-group">
 									<label for="inputEmail">Email</label>
-									<input type="email" id="inputEmail" class="form-control" placeholder="e-mail" required="required">
+									<input type="email" name="usuario.email" id="inputEmail" class="form-control" placeholder="e-mail" required="required" value="${usuarioLogado.email}">
 								</div>
 								<div class="form-group">
-									<label for="inputFundador">Fundador</label>
-									<input type="text" id="inputFundador" class="form-control" placeholder="Fundador">
+									<label for="inputFundador">CEO</label>
+									<input type="text" id="inputFundador" class="form-control" placeholder="CEO" >
 								</div>
 								<div class="row">
 									<div class="form-group col-sm-10">
 										<label for="inputRua">Rua</label>
-										<input type="text" class="form-control" id="inputRua" placeholder="Rua">
+										<input type="text" class="form-control" id="inputRua" placeholder="Rua" >
 									</div>
 									<div class="form-group col-sm-2">
 										<label for="inputNumero">Numero</label>
-										<input type="number" class="form-control" id="inputNumero" placeholder="Numero">
+										<input type="number" class="form-control" id="inputNumero" placeholder="Numero" >
 									</div>
 								</div>
 								<div class="row">
 									<div class="form-group col-sm-10">
 										<label for="inputCidade">Cidade</label>
-										<input type="text" class="form-control" id="inputCidade" placeholder="Cidade">
+										<input type="text" name="usuario.cidade" class="form-control" id="inputCidade" placeholder="Cidade" value="${usuarioLogado.cidade}">
 									</div>
 									<div class="form-group col-sm-2">
 										<label for="inputEstado">Estado</label>
@@ -95,14 +94,14 @@
 								</div>
 								<div class="form-group">
 									<label for="inputTelefone">Telefone</label>
-									<input type="tel" id="inputTelefone" class="form-control" placeholder="telefone">
+									<input type="tel" name="usuario.telefone" id="inputTelefone" class="form-control" placeholder="telefone" value="${usuarioLogado.telefone}">
 								</div>
 								<div class="form-group">
 									<label for="inputSite">Site</label>
 									<input type="text" id="inputSite" class="form-control" placeholder="site">
 								</div>
 								<div class="form-group">
-									<input class="btn btn-cadastrar" type="submit" value="salvar">
+									<button class="btn btn-cadastrar" type="submit" value="salvar">Salvar</button>
 								</div>
 							</form>
 						</div>

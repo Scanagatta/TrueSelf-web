@@ -99,9 +99,9 @@
 									<label for="inputTelefone">Telefone</label>
 									<input type="tel" id="inputTelefone" class="form-control" placeholder="telefone" value="${usuarioLogado.telefone}">
 								</div>
-								<ul class="pager">
-									<li class="next"><a href="#">Salvar</a></li>
-								</ul>
+								<div class="form-group">
+								<button type="submit" class="btn btn-cadastrar" value="salvar">Salvar</button>
+								</div>
 							</form>
 						</div>
 					</div>
