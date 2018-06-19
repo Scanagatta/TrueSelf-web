@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
   <head>
     <title>Busca</title>
-    <meta charset="US-ASCII">
+<meta charset="US-ASCII">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Andika" />
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>" > 
+		<link rel="stylesheet" href="<c:url value='/css/style.css'/>" > 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
+ 		<script type="text/javascript" src="<c:url value='/js/bootstrap.js'/>"></script>
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -50,12 +51,15 @@
         </nav>
         <div class="container-fluid">
           <div class="row">
-            <h1>Resultado da busca: </h1>
+            <h1>Resultado da busca: ${nome} </h1>
            <div class="table-responsive">
              <table class="table table-stripped">
-               <tr>
-                 <td><img src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user.png" class="imagens"><a href="">Nome</a></td>
+             	<c:forEach var="usuario" items="${usuarios}">
+			<tr>
+                 <td><img src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user.png" class="imagens"><a href="">${usuario.nome}</a></td>
                </tr>
+		</c:forEach>
+               
              </table>
            </div>
           </div>
