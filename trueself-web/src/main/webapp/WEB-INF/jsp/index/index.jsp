@@ -43,10 +43,16 @@
 								</div>
 								<hr>
 								<div class="form-group">
+									<c:if test="${emailNaoExiste eq 'vazio'}">
+									<label class="erro">O email está errado</label>
+									</c:if>
 									<label for="inputEmail" class="sr-only">E-mail</label>
 									<input name="usuario.email" id="inputEmail" class="form-control" placeholder="e-mail" required="required" type="email">
 								</div>
 								<div class="form-group">
+									<c:if test="${senhaIncorreta eq 'vazia'}">
+									<label class="erro">A senha está errada</label>
+									</c:if>
 									<label for="inputPassword" class="sr-only">Senha</label>
 									<input name="usuario.senha" id="inputPassword" class="form-control" placeholder="senha" required="required" type="password">
 								</div>
@@ -64,6 +70,7 @@
 					<div class="tab-pane" id="second-tab">
 						<div class="col-xs-12 col-sm-6 paginas">
 							<form action="cadastrar" method="post">
+							<hr>
 								<div class="form-group text-center">
 									<div class="radio radio-inline" id="rdUsuario">
 										<label class="radio-inline"><input type="radio" name="usuario.tipo" id="inlineRadio1" value="1">Pessoa</label>
@@ -95,7 +102,6 @@
 								</div>
 								<hr>
 								<button class="btn btn-lg btn-cadastrar btn-block" type="submit" value="cadastrar">Cadastrar</button>
-								<br>
 							</form>
 						</div>
 					</div>
