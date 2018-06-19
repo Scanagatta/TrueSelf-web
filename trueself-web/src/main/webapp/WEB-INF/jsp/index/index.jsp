@@ -83,6 +83,9 @@
 									<input id="inputNome" class="form-control" placeholder="nome completo" name="usuario.nome" required="required">
 								</div>
 								<div class="form-group">
+									<c:if test="${emailJaCadastrado eq 'vazio'}">
+									<label class="erro">O email já está sendo usado</label>
+									</c:if>
 									<label for="inputEmail" class="sr-only">E-mail</label>
 									<input id="inputEmail" class="form-control" placeholder="e-mail"  name="usuario.email" required="required" type="email">
 								</div>
@@ -91,6 +94,9 @@
 									<input id="inputPassword" class="form-control" placeholder="senha"  name="usuario.senha" required="required" type="password">
 								</div>
 								<div class="form-group">
+									<c:if test="${senhasDiferentes eq 'vazio'}">
+									<label class="erro">As senhas são diferentes</label>
+									</c:if>
 									<label for="inputConfirmPassword" class="sr-only">Confirmar Senha</label>
 									<input id="inputConfirmPassword" class="form-control" placeholder="confirmar senha" required="required" type="password" name="usuario.confirmaSenha">
 								</div>

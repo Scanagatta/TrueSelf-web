@@ -8,6 +8,8 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import dao.UsuarioDao;
+import model.Empresa;
+import model.Pessoa;
 import model.Usuario;
 
 @Controller
@@ -23,21 +25,34 @@ public class DadosUsuarioController {
 	@Get("/empresa")
 	public void empresa() {
 	}
-	
+
 	@Get("/perfil")
 	public void perfil() {
 	}
 
-	@Get("/home")
-	public void home() {
-		result.include("usuarioLogado", IndexController.getUsuarioLogado());
+	@Get("/homePessoa")
+	public void homePessoa() {
+		result.include("pessoaLogada", IndexController.getPessoaLogada());
 		result.redirectTo(HomeController.class).home();
 	}
 
-	@Post("/alterar")
-	public void alterar(Usuario usuario) {
-		dao.salvar(usuario);
-		result.include("usuarioLogado", IndexController.getUsuarioLogado());
+	@Get("/homeEmpresa")
+	public void homeEmpresa() {
+		result.include("empresaLogada", IndexController.getEmpresaLogada());
+		result.redirectTo(HomeController.class).home();
+	}
+
+	@Post("/alterarPessoa")
+	public void alterarPessoa(Pessoa pessoa) {
+		dao.salvar(pessoa);
+		result.include("pessoaLogada", IndexController.getPessoaLogada());
+		result.redirectTo(HomeController.class).home();
+	}
+
+	@Post("/alterarEmpresa")
+	public void alterarEmpresa(Empresa empresa) {
+		dao.salvar(empresa);
+		result.include("empresaLogada", IndexController.getEmpresaLogada());
 		result.redirectTo(HomeController.class).home();
 	}
 
@@ -50,7 +65,5 @@ public class DadosUsuarioController {
 	public void alterarSenha() {
 		result.redirectTo(AlterarSenhaController.class).alterar();
 	}
-	
-	
 
 }

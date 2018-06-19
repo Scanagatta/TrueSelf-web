@@ -8,6 +8,8 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import dao.UsuarioDao;
+import model.Empresa;
+import model.Pessoa;
 import model.Usuario;
 
 @Controller
@@ -22,6 +24,9 @@ public class IndexController {
 
 	private static Usuario usuarioLogado;
 
+	private static Pessoa pessoaLogada;
+	private static Empresa empresaLogada;
+
 	@Get("/index")
 	public void index() {
 	}
@@ -33,8 +38,13 @@ public class IndexController {
 
 				usuarioLogado = dao.pesquisarUsuario(usuario.getEmail());
 
-				result.redirectTo(this).home();
+				if (usuarioLogado.getTipo() == 1) {
+					pessoaLogada = (Pessoa) usuarioLogado;
+				} else {
+					empresaLogada = (Empresa) usuarioLogado;
 
+				}
+				result.redirectTo(this).home();
 			} else {
 				String senha = "vazia";
 				result.include("senhaIncorreta", senha);
@@ -53,13 +63,23 @@ public class IndexController {
 			if (usuario.getSenha().equals(usuario.getConfirmaSenha())) {
 				dao.salvar(usuario);
 				usuarioLogado = usuario;
+
+				if (usuarioLogado.getTipo() == 1) {
+					pessoaLogada = (Pessoa) usuarioLogado;
+				} else {
+					empresaLogada = (Empresa) usuarioLogado;
+
+				}
+
 				result.redirectTo(this).home();
 			} else {
-				// erro de senha
+				String senha = "vazia";
+				result.include("senhasDiferentes", senha);
 				result.redirectTo(this).index();
 			}
 		} else {
-			// erro email ja cadastrado
+			String email = "vazio";
+			result.include("emailJaCadastrado", email);
 			result.redirectTo(this).index();
 		}
 	}
@@ -67,12 +87,22 @@ public class IndexController {
 	@Get("/home")
 	public void home() {
 		result.include("usuarioLogado", usuarioLogado);
+		result.include("empresaLogada", empresaLogada);
+		result.include("pessoaLogada", pessoaLogada);
 		result.redirectTo(HomeController.class).home();
 
 	}
 
 	public static Usuario getUsuarioLogado() {
 		return usuarioLogado;
+	}
+
+	public static Pessoa getPessoaLogada() {
+		return pessoaLogada;
+	}
+
+	public static Empresa getEmpresaLogada() {
+		return empresaLogada;
 	}
 
 }

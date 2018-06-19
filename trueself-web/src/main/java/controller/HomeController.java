@@ -22,11 +22,11 @@ public class HomeController {
 
 	@Get("/perfil")
 	public void perfil() {
-		if(IndexController.getUsuarioLogado().getTipo() == 1) {
-			result.include("usuarioLogado", IndexController.getUsuarioLogado());
+		if (IndexController.getUsuarioLogado().getTipo() == 1) {
+			result.include("usuarioLogado", IndexController.getPessoaLogada());
 			result.redirectTo(DadosUsuarioController.class).perfil();
-		} else if(IndexController.getUsuarioLogado().getTipo() == 2) {
-			result.include("usuarioLogado", IndexController.getUsuarioLogado());
+		} else if (IndexController.getUsuarioLogado().getTipo() == 2) {
+			result.include("usuarioLogado", IndexController.getEmpresaLogada());
 			result.redirectTo(DadosUsuarioController.class).empresa();
 		}
 	}
