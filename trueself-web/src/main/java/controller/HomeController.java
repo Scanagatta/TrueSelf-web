@@ -14,12 +14,23 @@ public class HomeController {
 
 	@Inject
 	private Result result;
+	
+	@Inject
+	private UsuarioDao dao;
 
 	@Get("/home")
 	public void home() {
 
 	}
 
+	@Get("/busca")
+	public void busca(String nome) {
+		result.include("usuarioLogado", IndexController.getUsuarioLogado());
+		result.include("nome", nome);
+		result.include("usuarios", dao.pesquisarUsuario(nome));
+		result.redirectTo(BuscaController.class).busca();
+	}
+	
 	@Get("/perfil")
 	public void perfil() {
 		if(IndexController.getUsuarioLogado().getTipo() == 1) {

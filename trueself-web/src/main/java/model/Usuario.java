@@ -19,13 +19,15 @@ import dao.MeuCodigo;
 @Entity
 @NamedQueries({ @NamedQuery(name = Usuario.PESQUISAR_LOGIN, query = "select email from Usuario where email = ?1"),
 		@NamedQuery(name = Usuario.PESQUISAR_SENHA, query = "select senha from Usuario where email = ?1"),
-		@NamedQuery(name = Usuario.PESQUISAR_CODIGO, query = "select codigo from Usuario where email = ?1") })
+		@NamedQuery(name = Usuario.PESQUISAR_CODIGO, query = "select codigo from Usuario where email = ?1"),
+		@NamedQuery(name = Usuario.PESQUISAR_NOMES, query = "from Usuario where nome like '%?1'")})
 
 public class Usuario implements MeuCodigo {
 
 	public static final String PESQUISAR_LOGIN = "pesquisaLogin";
 	public static final String PESQUISAR_SENHA = "pesquisaSenha";
 	public static final String PESQUISAR_CODIGO = "pesquisaCodigo";
+	public static final String PESQUISAR_NOMES = "pesquisaPorNome";
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

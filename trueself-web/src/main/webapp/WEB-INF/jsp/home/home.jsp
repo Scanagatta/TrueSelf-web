@@ -33,9 +33,9 @@
             <li class="active"><a href="#">Home</a></li>
             <li><a href="perfil">Perfil</a></li>
           </ul>
-          <form class="navbar-form navbar-right" action="/action_page.php">
+          <form class="navbar-form navbar-right" action="busca" method="get">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Buscar">
+              <input name="nome" type="text" class="form-control" placeholder="Buscar">
             </div>
           </form>
           <ul class="nav navbar-nav navbar-right">

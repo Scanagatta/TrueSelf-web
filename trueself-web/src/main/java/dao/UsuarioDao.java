@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.List;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
@@ -49,6 +51,19 @@ public class UsuarioDao extends GenericDAO<Usuario> {
 			Usuario usuario = em.find(Usuario.class, tq.getSingleResult());
 
 			return usuario;
+		} catch (NoResultException e) {
+			return null;
+		} finally {
+			desconectar();
+		}
+	}
+	
+	public List<Usuario> listarPesquisa(String nome){
+		conectar();
+		try {
+			TypedQuery<Usuario> tq = em.createNamedQuery(Usuario.PESQUISAR_NOMES, Usuario.class);
+			tq.setParameter(1, nome);
+			return tq.getResultList();
 		} catch (NoResultException e) {
 			return null;
 		} finally {
