@@ -14,10 +14,10 @@ public abstract class GenericDAO<T extends MeuCodigo> {
 
 	@Produces
 	protected EntityManagerFactory emf;
-	
+
 	@Produces
 	protected EntityManager em;
-	
+
 	public GenericDAO() {
 	}
 
@@ -29,7 +29,7 @@ public abstract class GenericDAO<T extends MeuCodigo> {
 			desconectar();
 		}
 	}
-	
+
 	public boolean excluir(Long codigo, Class<T> classe) {
 		conectar();
 		EntityTransaction et = em.getTransaction();
@@ -37,10 +37,10 @@ public abstract class GenericDAO<T extends MeuCodigo> {
 			et.begin();
 			T objeto = em.find(classe, codigo);
 			if (objeto != null) {
-				em.remove(objeto);	
+				em.remove(objeto);
 			}
 			et.commit();
-		} catch (Exception  e) {
+		} catch (Exception e) {
 			et.rollback();
 			return false;
 		} finally {
@@ -55,12 +55,12 @@ public abstract class GenericDAO<T extends MeuCodigo> {
 		try {
 			et.begin();
 			if (objeto.getCodigo() == null) {
-				em.persist(objeto); // insert	
+				em.persist(objeto); // insert
 			} else {
-				em.merge(objeto); // update	
+				em.merge(objeto); // update
 			}
 			et.commit();
-		} catch (Exception  e) {
+		} catch (Exception e) {
 			et.rollback();
 			return false;
 		} finally {
@@ -68,12 +68,12 @@ public abstract class GenericDAO<T extends MeuCodigo> {
 		}
 		return true;
 	}
-		
+
 	protected void conectar() {
 		emf = Persistence.createEntityManagerFactory("unidade");
-		em = emf.createEntityManager();		
+		em = emf.createEntityManager();
 	}
-	
+
 	protected void desconectar() {
 		em.close();
 		emf.close();

@@ -60,11 +60,11 @@
 							<form action="alterar" method="post">
 								<div class="form-group">
 									<label for="inputNome">Nome Completo</label>
-									<input type="text" name="pessoa.nome" class="form-control" id="inputNome" placeholder="nome completo" required="required" value="${usuarioLogado.nome}">
+									<input type="text" name="pessoa.nome" class="form-control" id="inputNome" placeholder="nome completo" required="required" value="${pessoaLogada.nome}">
 								</div>
 								<div class="form-group">
 									<label for="inputEmail">Email</label>
-									<input type="email" name="pessoa.email"  id="inputEmail" class="form-control" placeholder="e-mail" required="required" value="${usuarioLogado.email}">
+									<input type="email" name="pessoa.email"  id="inputEmail" class="form-control" placeholder="e-mail" required="required" value="${pessoaLogada.email}">
 								</div>
 								<div class="form-group">
 									<label for="rdSexo">Sexo</label>
@@ -85,7 +85,7 @@
 								<div class="row">
 									<div class="form-group col-sm-10">
 										<label for="inputCidade">Cidade</label>
-										<input type="text" name="pessoa.cidade" class="form-control" id="inputCidade" placeholder="Cidade" value="${usuarioLogado.cidade}">
+										<input type="text" name="pessoa.cidade" class="form-control" id="inputCidade" placeholder="Cidade" value="${pessoaLogada.cidade}">
 									</div>
 									<div class="form-group col-sm-2">
 										<label for="inputEstado">Estado</label>
@@ -97,7 +97,7 @@
 								</div>
 								<div class="form-group">
 									<label for="inputTelefone">Telefone</label>
-									<input type="tel" name="pessoa.telefone" id="inputTelefone" class="form-control" placeholder="telefone" value="${usuarioLogado.telefone}">
+									<input type="tel" name="pessoa.telefone" id="inputTelefone" class="form-control" placeholder="telefone" value="${pessoaLogada.telefone}">
 								</div>
 								<div class="form-group">
 								<button type="submit" class="btn btn-cadastrar" value="salvar">Salvar</button>

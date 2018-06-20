@@ -32,13 +32,13 @@ public class AlterarSenhaController {
 		result.include("usuarioLogado", IndexController.getUsuarioLogado());
 		result.redirectTo(HomeController.class).home();
 	}
-	
+
 	@Get("/home")
 	public void home() {
 		result.include("usuarioLogado", IndexController.getUsuarioLogado());
 		result.redirectTo(HomeController.class).home();
 	}
-	
+
 	@Get("/perfil")
 	public void perfil() {
 		result.include("usuarioLogado", IndexController.getUsuarioLogado());
@@ -50,6 +50,5 @@ public class AlterarSenhaController {
 		result.redirectTo(IndexController.class).index();
 
 	}
-	
-	
+
 }
