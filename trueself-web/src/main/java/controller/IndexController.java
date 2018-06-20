@@ -33,7 +33,8 @@ public class IndexController {
 
 				usuarioLogado = dao.pesquisarUsuario(usuario.getEmail());
 
-				result.redirectTo(this).home();
+				result.include("usuarioLogado", usuarioLogado);
+				result.redirectTo(HomeController.class).home();
 
 			} else {
 				String senha = "vazia";
@@ -53,7 +54,7 @@ public class IndexController {
 			if (usuario.getSenha().equals(usuario.getConfirmaSenha())) {
 				dao.salvar(usuario);
 				usuarioLogado = usuario;
-				result.redirectTo(this).home();
+				result.redirectTo(HomeController.class).home();
 			} else {
 				String senha = "vazia";
 				result.include("senhasDiferentes", senha);
@@ -65,13 +66,6 @@ public class IndexController {
 			result.redirectTo(this).index();
 
 		}
-	}
-
-	@Get("/home")
-	public void home() {
-		result.include("usuarioLogado", usuarioLogado);
-		result.redirectTo(HomeController.class).home();
-
 	}
 
 	public static Usuario getUsuarioLogado() {

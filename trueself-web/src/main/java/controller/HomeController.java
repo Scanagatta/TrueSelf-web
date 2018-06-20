@@ -33,13 +33,10 @@ public class HomeController {
 
 	@Get("/perfil")
 	public void perfil() {
-		if (IndexController.getUsuarioLogado().getTipo() == 1) {
-			result.include("usuarioLogado", IndexController.getUsuarioLogado());
-			result.redirectTo(DadosUsuarioController.class).perfil();
-		} else if (IndexController.getUsuarioLogado().getTipo() == 2) {
-			result.include("usuarioLogado", IndexController.getUsuarioLogado());
-			result.redirectTo(DadosUsuarioController.class).empresa();
-		}
+
+		result.include("usuarioLogado", IndexController.getUsuarioLogado());
+		result.redirectTo(DadosUsuarioController.class).perfil();
+
 	}
 
 	@Get("/sair")
