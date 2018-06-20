@@ -4,11 +4,17 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 import dao.MeuCodigo;
 
 @Entity
+@NamedQueries({
+		@NamedQuery(name = Cidade.PESQUISAR_POR_ESTADO, query = "select cidade.codigo, cidade.nome, cidade.estado_codigo from Cidade where estado_codigo = ?1") })
 public class Cidade implements MeuCodigo {
+
+	public static final String PESQUISAR_POR_ESTADO = "pesquisaCodigo";
 
 	@Id
 	private Integer codigo;

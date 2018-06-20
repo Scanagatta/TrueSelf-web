@@ -24,7 +24,7 @@ import dao.MeuCodigo;
 @Inheritance(strategy = InheritanceType.JOINED)
 @NamedQueries({ @NamedQuery(name = Usuario.PESQUISAR_LOGIN, query = "select email from Usuario where email = ?1"),
 		@NamedQuery(name = Usuario.PESQUISAR_SENHA, query = "select senha from Usuario where email = ?1"),
-		@NamedQuery(name = Usuario.PESQUISAR_CODIGO, query = "select codigoUsuario from Usuario where email = ?1"),
+		@NamedQuery(name = Usuario.PESQUISAR_CODIGO, query = "select codigo from Usuario where email = ?1"),
 		@NamedQuery(name = Usuario.PESQUISAR_NOMES, query = "from Usuario where nome like '%?1%'") })
 
 public class Usuario implements MeuCodigo {
@@ -49,8 +49,6 @@ public class Usuario implements MeuCodigo {
 	private String telefone;
 	@ManyToOne
 	private Cidade cidade;
-	@ManyToOne
-	private Estado estado;
 	@Column(nullable = false)
 	private Integer qtdNeutro;
 	@Column(nullable = false)
@@ -59,8 +57,6 @@ public class Usuario implements MeuCodigo {
 	private Integer qtdAnjo;
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Comentario> comentarios;
-	@Column(nullable = false)
-	private Integer tipo;
 
 	@Column
 	private String sexo;
@@ -79,7 +75,7 @@ public class Usuario implements MeuCodigo {
 
 	public Usuario(Integer codigo, String nome, String email, String senha, String confirmaSenha, String telefone,
 			Cidade cidade, Integer qtdNeutro, Integer qtdDemonio, Integer qtdAnjo, List<Comentario> comentarios,
-			Integer tipo, String sexo, LocalDate dataNascimento, String estadoCivil) {
+			String sexo, LocalDate dataNascimento, String estadoCivil) {
 		super();
 		this.codigo = codigo;
 		this.nome = nome;
@@ -92,7 +88,6 @@ public class Usuario implements MeuCodigo {
 		this.qtdDemonio = qtdDemonio;
 		this.qtdAnjo = qtdAnjo;
 		this.comentarios = comentarios;
-		this.tipo = tipo;
 		this.sexo = sexo;
 		this.dataNascimento = dataNascimento;
 		this.estadoCivil = estadoCivil;
@@ -190,14 +185,6 @@ public class Usuario implements MeuCodigo {
 		this.comentarios = comentarios;
 	}
 
-	public Integer getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(Integer tipo) {
-		this.tipo = tipo;
-	}
-
 	public String getSexo() {
 		return sexo;
 	}
@@ -220,14 +207,6 @@ public class Usuario implements MeuCodigo {
 
 	public void setEstadoCivil(String estadoCivil) {
 		this.estadoCivil = estadoCivil;
-	}
-
-	public Estado getEstado() {
-		return estado;
-	}
-
-	public void setEstado(Estado estado) {
-		this.estado = estado;
 	}
 
 }

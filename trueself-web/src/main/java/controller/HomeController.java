@@ -33,7 +33,6 @@ public class HomeController {
 
 	@Get("/perfil")
 	public void perfil() {
-
 		result.include("usuarioLogado", IndexController.getUsuarioLogado());
 		result.redirectTo(DadosUsuarioController.class).perfil();
 

@@ -54,6 +54,7 @@ public class IndexController {
 			if (usuario.getSenha().equals(usuario.getConfirmaSenha())) {
 				dao.salvar(usuario);
 				usuarioLogado = usuario;
+				result.include("usuarioLogado", usuarioLogado);
 				result.redirectTo(HomeController.class).home();
 			} else {
 				String senha = "vazia";

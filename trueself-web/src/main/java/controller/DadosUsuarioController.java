@@ -20,10 +20,6 @@ public class DadosUsuarioController {
 	@Inject
 	private UsuarioDao dao;
 
-	@Get("/empresa")
-	public void empresa() {
-	}
-
 	@Get("/perfil")
 	public void perfil() {
 	}
@@ -37,6 +33,7 @@ public class DadosUsuarioController {
 	@Post("/alterar")
 	public void alterar(Usuario usuario) {
 		dao.salvar(usuario);
+
 		result.include("usuarioLogado", IndexController.getUsuarioLogado());
 		result.redirectTo(HomeController.class).home();
 	}

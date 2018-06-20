@@ -71,13 +71,6 @@
 						<div class="col-xs-12 col-sm-6 paginas">
 							<form action="cadastrar" method="post">
 							<hr>
-								<div class="form-group text-center">
-									<div class="radio radio-inline" id="rdUsuario">
-										<label class="radio-inline"><input type="radio" name="usuario.tipo" id="inlineRadio1" value="1">Pessoa</label>
-										<label class="radio-inline"><input type="radio" name="usuario.tipo" id="inlineRadio2" value="2">Empresa</label>
-									</div>
-								</div>
-								<hr>
 								<div class="form-group">
 									<label for="inputNome" class="sr-only">Nome Completo</label>
 									<input id="inputNome" class="form-control" placeholder="nome completo" name="usuario.nome" required="required">
