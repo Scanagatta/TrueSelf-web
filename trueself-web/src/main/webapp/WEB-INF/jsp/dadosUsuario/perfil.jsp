@@ -60,11 +60,11 @@
 							<form action="alterar" method="post">
 								<div class="form-group">
 									<label for="inputNome">Nome Completo</label>
-									<input type="text" name="pessoa.nome" class="form-control" id="inputNome" placeholder="nome completo" required="required" value="${pessoaLogada.nome}">
+									<input type="text" name="usuario.nome" class="form-control" id="inputNome" placeholder="nome completo" required="required" value="${usuarioLogada.nome}">
 								</div>
 								<div class="form-group">
 									<label for="inputEmail">Email</label>
-									<input type="email" name="pessoa.email"  id="inputEmail" class="form-control" placeholder="e-mail" required="required" value="${pessoaLogada.email}">
+									<input type="email" name="usuario.email"  id="inputEmail" class="form-control" placeholder="e-mail" required="required" value="${usuarioLogada.email}">
 								</div>
 								<div class="form-group">
 									<label for="rdSexo">Sexo</label>
@@ -76,16 +76,16 @@
 								</div>
 								<div class="form-group">
 									<label for="inputData">Data de Nascimento</label>
-									<input type="date" name="pessoa.dataNascimento" id="inputData" class="form-control" >
+									<input type="date" name="usuario.dataNascimento" id="inputData" class="form-control" >
 								</div>
 								<div class="form-group">
 									<label for="inputEstadoCivil">Estado Civil</label>
-									<input type="text" name="pessoa.estadoCivil" id="inputEstadoCivil" class="form-control" placeholder="estado civil" >
+									<input type="text" name="usuario.estadoCivil" id="inputEstadoCivil" class="form-control" placeholder="estado civil" >
 								</div>
 								<div class="row">
 									<div class="form-group col-sm-10">
 										<label for="inputCidade">Cidade</label>
-										<input type="text" name="pessoa.cidade" class="form-control" id="inputCidade" placeholder="Cidade" value="${pessoaLogada.cidade}">
+										<input type="text" name="usuario.cidade" class="form-control" id="inputCidade" placeholder="Cidade" value="${usuarioLogado.cidade}">
 									</div>
 									<div class="form-group col-sm-2">
 										<label for="inputEstado">Estado</label>
@@ -97,7 +97,7 @@
 								</div>
 								<div class="form-group">
 									<label for="inputTelefone">Telefone</label>
-									<input type="tel" name="pessoa.telefone" id="inputTelefone" class="form-control" placeholder="telefone" value="${pessoaLogada.telefone}">
+									<input type="tel" name="usuario.telefone" id="inputTelefone" class="form-control" placeholder="telefone" value="${usuarioLogado.telefone}">
 								</div>
 								<div class="form-group">
 								<button type="submit" class="btn btn-cadastrar" value="salvar">Salvar</button>
