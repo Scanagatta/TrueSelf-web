@@ -65,7 +65,7 @@ public class UsuarioDao extends GenericDAO<Usuario> {
 		conectar();
 		try {
 			TypedQuery<Usuario> tq = em.createNamedQuery(Usuario.PESQUISAR_NOMES, Usuario.class);
-			tq.setParameter(1, nome);
+			tq.setParameter(1, "'%"+nome+"%'");
 			return tq.getResultList();
 		} catch (NoResultException e) {
 			return null;
