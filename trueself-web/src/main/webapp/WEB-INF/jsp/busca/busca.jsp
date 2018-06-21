@@ -28,21 +28,21 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="perfil.html">Perfil</a></li>
+            <li><a href="home">Home</a></li>
+            <li><a href="perfil">Perfil</a></li>
           </ul>
-          <form class="navbar-form navbar-right" action="/action_page.php">
+          <form class="navbar-form navbar-right" action="pesquisa">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Buscar">
+              <input name=nome type="text" class="form-control" placeholder="Buscar">
             </div>
           </form>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="alterar.html">Alterar senha</a></li>
+                <li><a href="alterarSenha">Alterar senha</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="index.html">Sair</a></li>
+                <li><a href="sair">Sair</a></li>
               </ul>
             </li>
           </ul>
@@ -56,7 +56,7 @@
              <table class="table table-stripped">
              	<c:forEach var="usuario" items="${usuarios}">
 			<tr>
-                 <td><img src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user.png" class="imagens"><a href="">${usuario.nome}</a></td>
+                 <td><img src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user.png" class="imagens"><a href="visitante?visitado=${usuario}">${usuario.nome}</a></td>
                </tr>
 		</c:forEach>
                

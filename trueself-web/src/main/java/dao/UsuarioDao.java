@@ -6,6 +6,8 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
+import org.jboss.logging.Param;
+
 import model.Usuario;
 
 @ApplicationScoped
@@ -58,6 +60,7 @@ public class UsuarioDao extends GenericDAO<Usuario> {
 		}
 	}
 	
+
 	public List<Usuario> listarPesquisa(String nome){
 		conectar();
 		try {

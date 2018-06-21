@@ -32,9 +32,9 @@
 						<li><a href="home">Home</a></li>
 						<li class="active"><a href="#">Perfil</a></li>
 					</ul>
-					<form class="navbar-form navbar-right" action="/action_page.php">
+					<form class="navbar-form navbar-right" action="busca">
 						<div class="form-group">
-							<input type="search" class="form-control" placeholder="Buscar">
+							<input name="nome" type="search" class="form-control" placeholder="Buscar">
 						</div>
 					</form>
 					<ul class="nav navbar-nav navbar-right">
@@ -83,15 +83,20 @@
 									<input type="text" name="usuario.estadoCivil" id="inputEstadoCivil" class="form-control" placeholder="estado civil" >
 								</div>
 								<div class="row">
-									<div class="form-group col-sm-10">
-										<label for="inputCidade">Cidade</label>
-										<input type="text" name="usuario.cidade" class="form-control" id="inputCidade" placeholder="Cidade" value="${usuarioLogado.cidade}">
-									</div>
 									<div class="form-group col-sm-2">
-										<label for="inputEstado">Estado</label>
-										<select name="" id="selectEstado" class="form-control">
-											<option>Santa Catarina</option>
-											<option>Parana</option>
+										<label for="selectEstado">Estado</label>
+										<select  name="usuario.cidade.estado" id="selectEstado" class="form-control select">
+										<c:forEach var="estado" items="${estados}">
+										<option>${estado.nome}</option>
+										</c:forEach>
+										</select>
+									</div>
+									<div class="form-group col-sm-10">
+										<label for="selectCidade">Cidade</label>
+										<select  name="usuario.cidade" class="form-control select" id="selectCidade">
+										<c:forEach var="cidade" items="${cidades}">
+										<option>${cidade.nome}</option>
+										</c:forEach>
 										</select>
 									</div>
 								</div>

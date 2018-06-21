@@ -26,6 +26,14 @@ public class IndexController {
 	public void index() {
 	}
 
+	@Get("/busca")
+	public void busca(String nome) {
+		result.include("usuarioLogado", IndexController.getUsuarioLogado());
+		result.include("nome", nome);
+		result.include("usuarios", dao.listarPesquisa(nome));
+		result.redirectTo(BuscaController.class).busca();
+	}
+	
 	@Post("/login")
 	public void login(Usuario usuario) {
 		if (dao.pesquisarLogin(usuario.getEmail()) != null) {

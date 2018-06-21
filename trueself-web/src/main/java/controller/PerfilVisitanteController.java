@@ -2,16 +2,12 @@ package controller;
 
 import javax.inject.Inject;
 
-import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
-import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
 import dao.UsuarioDao;
-import model.Usuario;
 
-@Controller
-@Path("/busca")
-public class BuscaController {
+public class PerfilVisitanteController {
+	
 
 	@Inject
 	private Result result;
@@ -19,16 +15,8 @@ public class BuscaController {
 	@Inject
 	private UsuarioDao dao;
 
-	@Get("/busca")
-	public void busca() {
-	}
-	
-	@Get("/pesquisa")
-	public void pesquisa(String nome) {
-		result.include("usuarioLogado", IndexController.getUsuarioLogado());
-		result.include("nome", nome);
-		result.include("usuarios", dao.listarPesquisa(nome));
-		result.redirectTo(BuscaController.class).busca();
+	@Get("/perfilVisitante")
+	public void perfilVisitante() {
 	}
 
 	@Get("/alterarSenha")
@@ -42,11 +30,12 @@ public class BuscaController {
 		result.redirectTo(HomeController.class).home();
 	}
 	
-	@Get("/visitante")
-	public void visitante(Usuario visitado) {
+	@Get("/busca")
+	public void busca(String nome) {
 		result.include("usuarioLogado", IndexController.getUsuarioLogado());
-		result.include("visitado", visitado);
-		result.redirectTo(PerfilVisitanteController.class).perfilVisitante();
+		result.include("nome", nome);
+		result.include("usuarios", dao.listarPesquisa(nome));
+		result.redirectTo(BuscaController.class).busca();
 	}
 
 	@Get("/perfil")

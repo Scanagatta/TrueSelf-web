@@ -32,9 +32,9 @@
 						<li><a href="home">Home</a></li>
 						<li><a href="perfil">Perfil</a></li>
 					</ul>
-					<form class="navbar-form navbar-right" action="/action_page.php">
+					<form class="navbar-form navbar-right" action="busca">
 						<div class="form-group">
-							<input type="search" class="form-control" placeholder="Buscar">
+							<input name="nome" type="search" class="form-control" placeholder="Buscar">
 						</div>
 					</form>
 					<ul class="nav navbar-nav navbar-right">
@@ -70,9 +70,9 @@
 									<label for="inputConfNewSenha">Confirmar Nova Senha</label>
 									<input type="password" id="inputConfNewSenha" class="form-control" placeholder="confirmar nova senha" name="usuario.confirmaSenha">
 								</div>
-								<ul class="pager">
+								<div class="form-group">
 								<button class="btn btn-lg btn-primary btn-block" type="submit" value="salvar">salvar</button>
-								</ul>
+								</div>
 							</form>
 						</div>
 					</div>
