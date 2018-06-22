@@ -55,8 +55,8 @@
            <div class="table-responsive">
              <table class="table table-stripped">
              	<c:forEach var="usuario" items="${usuarios}">
-			<tr>
-                 <td><img src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user.png" class="imagens"><a href="visitante?visitado=${usuario}">${usuario.nome}</a></td>
+				<tr>
+                 <td><img src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user.png" class="imagens"><a href="visitante/${usuario.email}">${usuario.nome}</a></td>
                </tr>
 		</c:forEach>
                

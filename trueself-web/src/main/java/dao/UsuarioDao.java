@@ -1,13 +1,10 @@
 package dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
-
-import org.jboss.logging.Param;
 
 import model.Usuario;
 
