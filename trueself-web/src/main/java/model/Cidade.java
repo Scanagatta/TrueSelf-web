@@ -11,7 +11,7 @@ import dao.MeuCodigo;
 
 @Entity
 @NamedQueries({
-		@NamedQuery(name = Cidade.PESQUISAR_POR_ESTADO, query = "select codigo, nome, estado from Cidade where estado = ?1") })
+		@NamedQuery(name = Cidade.PESQUISAR_POR_ESTADO, query = "select c from Cidade c where estado = ?1") })
 public class Cidade implements MeuCodigo {
 
 	public static final String PESQUISAR_POR_ESTADO = "pesquisaCodigoCidade";

@@ -69,9 +69,9 @@
 								<div class="form-group">
 									<label for="rdSexo">Sexo</label>
 									<div class="radio radio-inline" id="rdSexo">
-										<label class="radio-inline"><input type="radio" name="sexo" id="inlineRadio1" value="masculino">Masculino</label>
-										<label class="radio-inline"><input type="radio" name="sexo" id="inlineRadio2" value="feminino">Feminino</label>
-										<label class="radio-inline"><input type="radio" name="sexo" id="inlineRadio3" value="outro">Outro</label>
+										<label class="radio-inline"><input type="radio" name="usuario.sexo" id="inlineRadio1" value="masculino">Masculino</label>
+										<label class="radio-inline"><input type="radio" name="usuario.sexo" id="inlineRadio2" value="feminino">Feminino</label>
+										<label class="radio-inline"><input type="radio" name="usuario.sexo" id="inlineRadio3" value="outro">Outro</label>
 									</div>
 								</div>
 								<div class="form-group">
@@ -95,7 +95,7 @@
 										<label for="selectCidade">Cidade</label>
 										<select  name="usuario.cidade" class="form-control select" id="selectCidade">
 										<c:forEach var="cidade" items="${cidades}">
-										<option>${cidade.nome}</option>
+										<option>${cidade.nome} - ${cidade.estado.nome}</option>
 										</c:forEach>
 										</select>
 									</div>
