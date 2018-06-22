@@ -98,7 +98,7 @@
              <div class="col-xs-12 col-sm-6">
                 <form action="comentar" method="post">
                   <div class="form-group">
-                  <input type="hidden" value="${visitado}">
+                  <input type="hidden" name="visitado" value="${visitado}">
                     <textarea placeholder="comente aqui" name="comentario.comentario"></textarea>
                     <button class="btn btn-lg btn-cadastrar" type="submit" >Comentar</button>
                   </div>

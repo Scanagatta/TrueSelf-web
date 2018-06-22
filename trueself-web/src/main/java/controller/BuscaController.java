@@ -42,12 +42,13 @@ public class BuscaController {
 		result.redirectTo(HomeController.class).home();
 	}
 	
-	@Get("/visitante")
-	public void visitante(Usuario visitado) {
+	@Get("/visitante/{email}")
+	public void visitante(String email) {
+		Usuario visitado = dao.pesquisarUsuario(email);
+		//usuario pode se auto-comentar
 		if(IndexController.getUsuarioLogado().equals(visitado)) {
 			result.redirectTo(this).home();
 		} else {
-			System.out.println(visitado.getNome());
 			result.include("usuarioLogado", IndexController.getUsuarioLogado());
 			result.include("visitado", visitado);
 			result.redirectTo(PerfilVisitanteController.class).perfilVisitante();
