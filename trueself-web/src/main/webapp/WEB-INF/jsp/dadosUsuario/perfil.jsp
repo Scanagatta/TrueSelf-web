@@ -66,6 +66,7 @@
 									<label for="inputEmail">Email</label>
 									<input type="email" name="usuario.email"  id="inputEmail" class="form-control" placeholder="e-mail" required="required" value="${usuarioLogado.email}">
 								</div>
+								
 								<div class="form-group">
 									<label for="rdSexo">Sexo</label>
 									<div class="radio radio-inline" id="rdSexo">
@@ -74,10 +75,12 @@
 										<label class="radio-inline"><input type="radio" name="usuario.sexo" id="inlineRadio3" value="outro">Outro</label>
 									</div>
 								</div>
+
 								<div class="form-group">
 									<label for="inputData">Data de Nascimento</label>
 									<input type="date" name="usuario.dataNascimento" id="inputData" class="form-control" >
 								</div>
+								
 								<div class="form-group">
 									<label for="inputEstadoCivil">Estado Civil</label>
 									<input type="text" name="usuario.estadoCivil" id="inputEstadoCivil" class="form-control" placeholder="estado civil" >
@@ -91,6 +94,7 @@
 										</c:forEach>
 										</select>
 									</div>
+
 									<div class="form-group col-sm-10">
 										<label for="selectCidade">Cidade</label>
 										<select  name="usuario.cidade" class="form-control select" id="selectCidade">

@@ -17,6 +17,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 import dao.MeuCodigo;
 
@@ -44,7 +45,9 @@ public class Usuario implements MeuCodigo {
 	@Column(nullable = false)
 	private String senha;
 
+	@Transient
 	private String confirmaSenha;
+	@Transient
 	private String senhaAntiga;
 
 	@Column
