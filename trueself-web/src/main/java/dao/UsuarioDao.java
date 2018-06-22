@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -59,14 +60,16 @@ public class UsuarioDao extends GenericDAO<Usuario> {
 			desconectar();
 		}
 	}
-	
 
-	public List<Usuario> listarPesquisa(String nome){
+	public List<Usuario> listarPesquisa(String nome) {
 		conectar();
+		List<Usuario> result = null;
 		try {
-			TypedQuery<Usuario> tq = em.createNamedQuery(Usuario.PESQUISAR_NOMES, Usuario.class);
-			tq.setParameter(1, "'%"+nome+"%'");
-			return tq.getResultList();
+
+			result = em.createQuery("select us from Usuario us where lower(us.nome) LIKE :nome", Usuario.class)
+					.setParameter("nome", "%" + nome + "%").getResultList();
+			return result;
+
 		} catch (NoResultException e) {
 			return null;
 		} finally {
