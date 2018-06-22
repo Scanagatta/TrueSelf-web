@@ -16,6 +16,10 @@ body{
 	background-color: #FEFEFF;
 }
 
+.erro{
+	color: red;
+}
+
 
 .nav > li > a:focus, .nav > li > a:hover{
 	background-color: #FE654F;

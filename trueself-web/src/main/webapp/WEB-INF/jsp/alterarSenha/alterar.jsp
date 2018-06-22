@@ -57,18 +57,26 @@
 					
 					<div class="row">
 						<div class="col-xs-12 col-sm-9">
-							<form action="alterarSenha" method="get">
+							<form action="alterarSenha" method="post">
 								<div class="form-group">
+									<c:if test="${senhaIncorreta eq 'vazia'}">
+									<label class="erro">A senha antiga não é essa, tente novamente</label>
+									<br>
+									</c:if>
 									<label for="inputOldSenha">Senha Antiga</label>
-									<input type="password" class="form-control" id="inputOldSenha" placeholder="senha antiga" required="required">
+									<input type="password" class="form-control" id="inputOldSenha" placeholder="senha antiga" name="usuario.senhaAntiga">
 								</div>
 								<div class="form-group">
 									<label for="inputNewSenha">Nova Senha</label>
 									<input type="password" id="inputNewSenha" class="form-control" placeholder="nova senha" name="usuario.senha">
 								</div>
 								<div class="form-group">
+									<c:if test="${senhasDiferentes eq 'vazia'}">
+									<label class="erro">As senhas são diferentes, tente novamente</label>
+									<br>
+									</c:if>
 									<label for="inputConfNewSenha">Confirmar Nova Senha</label>
-									<input type="password" id="inputConfNewSenha" class="form-control" placeholder="confirmar nova senha" name="usuario.confirmaSenha">
+									<input type="password" id="inputConfNewSenha" class="form-control"  placeholder="confirmar nova senha" name="usuario.confirmaSenha">
 								</div>
 								<div class="form-group">
 								<button class="btn btn-lg btn-primary btn-block" type="submit" value="salvar">salvar</button>

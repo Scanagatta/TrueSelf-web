@@ -43,8 +43,10 @@ public class Usuario implements MeuCodigo {
 	private String email;
 	@Column(nullable = false)
 	private String senha;
-	@Column
+
 	private String confirmaSenha;
+	private String senhaAntiga;
+
 	@Column
 	private String telefone;
 	@ManyToOne
@@ -73,15 +75,16 @@ public class Usuario implements MeuCodigo {
 		comentarios = new ArrayList<Comentario>();
 	}
 
-	public Usuario(Integer codigo, String nome, String email, String senha, String confirmaSenha, String telefone,
-			Cidade cidade, Integer qtdNeutro, Integer qtdDemonio, Integer qtdAnjo, List<Comentario> comentarios,
-			String sexo, LocalDate dataNascimento, String estadoCivil) {
+	public Usuario(Integer codigo, String nome, String email, String senha, String confirmaSenha, String senhaAntiga,
+			String telefone, Cidade cidade, Integer qtdNeutro, Integer qtdDemonio, Integer qtdAnjo,
+			List<Comentario> comentarios, String sexo, LocalDate dataNascimento, String estadoCivil) {
 		super();
 		this.codigo = codigo;
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;
 		this.confirmaSenha = confirmaSenha;
+		this.senhaAntiga = senhaAntiga;
 		this.telefone = telefone;
 		this.cidade = cidade;
 		this.qtdNeutro = qtdNeutro;
@@ -207,6 +210,14 @@ public class Usuario implements MeuCodigo {
 
 	public void setEstadoCivil(String estadoCivil) {
 		this.estadoCivil = estadoCivil;
+	}
+
+	public String getSenhaAntiga() {
+		return senhaAntiga;
+	}
+
+	public void setSenhaAntiga(String novaSenha) {
+		this.senhaAntiga = novaSenha;
 	}
 
 }

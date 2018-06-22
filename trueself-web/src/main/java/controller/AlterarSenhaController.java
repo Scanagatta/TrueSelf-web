@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
+import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import dao.UsuarioDao;
 import model.Usuario;
@@ -22,15 +23,31 @@ public class AlterarSenhaController {
 	@Get("/alterar")
 	public void alterar() {
 		result.include("usuario", IndexController.getUsuarioLogado());
+		result.include("usuarioLogado", IndexController.getUsuarioLogado());
 	}
 
-	@Get("/alterarSenha")
+	@Post("/alterarSenha")
 	public void alterarSenha(Usuario usuario) {
-		IndexController.getUsuarioLogado().setSenha(usuario.getSenha());
-		IndexController.getUsuarioLogado().setConfirmaSenha(usuario.getConfirmaSenha());
-		dao.salvar(IndexController.getUsuarioLogado());
-		result.include("usuarioLogado", IndexController.getUsuarioLogado());
-		result.redirectTo(HomeController.class).home();
+		if (dao.pesquisarSenha(IndexController.getUsuarioLogado().getEmail()).equals(usuario.getSenhaAntiga())) {
+			if (usuario.getSenha().equals(usuario.getConfirmaSenha())) {
+
+				IndexController.getUsuarioLogado().setSenha(usuario.getSenha());
+				IndexController.getUsuarioLogado().setConfirmaSenha(usuario.getConfirmaSenha());
+				dao.salvar(IndexController.getUsuarioLogado());
+				result.include("usuarioLogado", IndexController.getUsuarioLogado());
+				result.redirectTo(HomeController.class).home();
+
+			} else {
+				String senha = "vazia";
+				result.include("senhasDiferentes", senha);
+				result.redirectTo(this).alterar();
+			}
+		} else {
+			String senha = "vazia";
+			result.include("senhaIncorreta", senha);
+			result.redirectTo(this).alterar();
+		}
+
 	}
 
 	@Get("/busca")
@@ -40,7 +57,7 @@ public class AlterarSenhaController {
 		result.include("usuarios", dao.listarPesquisa(nome));
 		result.redirectTo(BuscaController.class).busca();
 	}
-	
+
 	@Get("/home")
 	public void home() {
 		result.include("usuarioLogado", IndexController.getUsuarioLogado());
