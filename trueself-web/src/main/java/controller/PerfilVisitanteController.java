@@ -1,11 +1,21 @@
 package controller;
 
+import java.time.LocalDate;
+
 import javax.inject.Inject;
 
+import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
+import br.com.caelum.vraptor.Path;
+import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
+import dao.ComentarioDao;
 import dao.UsuarioDao;
+import model.Comentario;
+import model.Usuario;
 
+@Controller
+@Path("/visitante")
 public class PerfilVisitanteController {
 	
 
@@ -14,6 +24,9 @@ public class PerfilVisitanteController {
 
 	@Inject
 	private UsuarioDao dao;
+	
+	@Inject
+	private ComentarioDao comentarioDao;
 
 	@Get("/perfilVisitante")
 	public void perfilVisitante() {
@@ -42,6 +55,19 @@ public class PerfilVisitanteController {
 	public void perfil() {
 		result.include("usuarioLogado", IndexController.getUsuarioLogado());
 		result.redirectTo(DadosUsuarioController.class).perfil();
+	}
+	
+	@Post("/comentar")
+	public void comentar(Comentario comentario, Usuario visitado) {
+		comentario.setData(LocalDate.now());
+		comentario.setUsuarioEnvia(IndexController.getUsuarioLogado());
+		comentario.setUsuarioRecebe(visitado);
+		visitado.adicionarComentario(comentario);
+		comentarioDao.salvar(comentario);
+		dao.salvar(visitado);
+		result.include("usuarioLogado", IndexController.getUsuarioLogado());
+		result.include("visitado", visitado);
+		result.redirectTo(this).perfilVisitante();
 	}
 
 	@Get("/sair")

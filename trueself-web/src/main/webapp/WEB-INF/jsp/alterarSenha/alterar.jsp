@@ -79,7 +79,7 @@
 									<input type="password" id="inputConfNewSenha" class="form-control"  placeholder="confirmar nova senha" name="usuario.confirmaSenha">
 								</div>
 								<div class="form-group">
-								<button class="btn btn-lg btn-primary btn-block" type="submit" value="salvar">salvar</button>
+								<button class="btn btn-lg btn-cadastrar btn-block" type="submit" value="salvar">salvar</button>
 								</div>
 							</form>
 						</div>

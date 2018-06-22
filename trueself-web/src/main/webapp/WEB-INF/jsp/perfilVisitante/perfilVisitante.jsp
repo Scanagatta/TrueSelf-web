@@ -6,11 +6,11 @@
   <head>
     <title>TrueSelf</title>
     <meta charset="US-ASCII">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Andika" />
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Andika" />
+		<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>" > 
+		<link rel="stylesheet" href="<c:url value='/css/style.css'/>" > 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
+ 		<script type="text/javascript" src="<c:url value='/js/bootstrap.js'/>"></script>
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -55,7 +55,7 @@
               <blockquote>
                 <h1>${visitado.nome}</h1>
               </blockquote>
-              <img src="https://www.allkpop.com/upload/2017/01/af_org/dindin-black-pink-bewhy_1484083826_af_org.jpg" class="col-sm-6 img-responsive">
+              <img src="https://pm1.narvii.com/6853/47223b3b799bb2f697d37f3d1f5c7e160e492a95v2_hq.jpg" class="col-sm-6 img-responsive">
               <div class="col-xs-12 col-sm-6">
                 <dl class="dl-horizontal text-center">
                   <dt><img src="https://png.icons8.com/color/50/000000/angel.png" alt="" class="img-responsive"></dt>
@@ -68,12 +68,12 @@
               </div>
               <div class="col-xs-12">
                 <dl class="dl-horizontal text-center">
-                  <dt>Idade</dt>
-                  <dd>sgd</dd>
+                  <dt>Data de Nascimento</dt>
+                  <dd>${visitado.dataNascimento}</dd>
                   <dt>Sexo</dt>
-                  <dd>sg</dd>
+                  <dd>${visistado.sexo}</dd>
                   <dt>Email</dt>
-                  <dd>sfdsd</dd>
+                  <dd>${visitado.email}</dd>
                 </dl>
               </div>
             </div>
@@ -87,7 +87,7 @@
                       <td>Comentario</td>
                     </tr>
                   </thead>
-                  <c:forEach var="comentario" items="${usuarioLogado.comentarios}">
+                  <c:forEach var="comentario" items="${visitado.comentarios}">
 					<tr>
 						<td>${comentario.data}</td>
 						<td>${comentario.comentario}</td>
@@ -96,10 +96,11 @@
                 </table>
               </div>
              <div class="col-xs-12 col-sm-6">
-                <form action="" method="post">
+                <form action="comentar" method="post">
                   <div class="form-group">
-                    <textarea placeholder="comente aqui"></textarea>
-                    <button class="btn" type="submit" >Comentar</button>
+                  <input type="hidden" value="${visitado}">
+                    <textarea placeholder="comente aqui" name="comentario.comentario"></textarea>
+                    <button class="btn btn-lg btn-cadastrar" type="submit" >Comentar</button>
                   </div>
                 </form>
               </div>

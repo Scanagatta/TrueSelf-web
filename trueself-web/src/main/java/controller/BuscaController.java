@@ -44,9 +44,14 @@ public class BuscaController {
 	
 	@Get("/visitante")
 	public void visitante(Usuario visitado) {
-		result.include("usuarioLogado", IndexController.getUsuarioLogado());
-		result.include("visitado", visitado);
-		result.redirectTo(PerfilVisitanteController.class).perfilVisitante();
+		if(IndexController.getUsuarioLogado().equals(visitado)) {
+			result.redirectTo(this).home();
+		} else {
+			System.out.println(visitado.getNome());
+			result.include("usuarioLogado", IndexController.getUsuarioLogado());
+			result.include("visitado", visitado);
+			result.redirectTo(PerfilVisitanteController.class).perfilVisitante();
+		}
 	}
 
 	@Get("/perfil")
