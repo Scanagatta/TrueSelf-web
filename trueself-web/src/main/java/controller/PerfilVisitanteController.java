@@ -58,9 +58,10 @@ public class PerfilVisitanteController {
 	}
 	
 	@Post("/comentar")
-	public void comentar(Comentario comentario, Usuario visitado) {
+	public void comentar(Comentario comentario, String email) {
 		comentario.setData(LocalDate.now());
 		comentario.setUsuarioEnvia(IndexController.getUsuarioLogado());
+		Usuario visitado = dao.pesquisarUsuario(email);
 		comentario.setUsuarioRecebe(visitado);
 		visitado.adicionarComentario(comentario);
 		comentarioDao.salvar(comentario);
