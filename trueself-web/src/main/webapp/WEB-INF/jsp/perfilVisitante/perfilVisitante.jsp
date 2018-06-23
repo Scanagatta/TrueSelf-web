@@ -99,7 +99,7 @@
                 <form action="comentar" method="post">
                   <div class="form-group">
                   <input type="hidden" name="visitado" value="${visitado}">
-                    <textarea placeholder="comente aqui" name="comentario.comentario"></textarea>
+                    <input class="form-control" placeholder="comente aqui" name="comentario.comentario">
                     <button class="btn btn-lg btn-cadastrar" type="submit" >Comentar</button>
                   </div>
                 </form>
