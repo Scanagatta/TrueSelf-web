@@ -81,4 +81,10 @@ public class IndexController {
 		return usuarioLogado;
 	}
 
+	public static void setUsuarioLogado(Usuario usuarioLogado) {
+		IndexController.usuarioLogado = usuarioLogado;
+	}
+	
+	
+
 }

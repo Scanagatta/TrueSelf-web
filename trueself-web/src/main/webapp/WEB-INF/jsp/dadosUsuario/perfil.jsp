@@ -86,20 +86,20 @@
 									<input type="text" name="usuario.estadoCivil" id="inputEstadoCivil" class="form-control" placeholder="estado civil" >
 								</div>
 								<div class="row">
-									<div class="form-group col-sm-2">
-										<label for="selectEstado">Estado</label>
-										<select  name="usuario.cidade.estado" id="selectEstado" class="form-control select">
-										<c:forEach var="estado" items="${estados}">
-										<option>${estado.nome}</option>
-										</c:forEach>
-										</select>
-									</div>
+<!-- 									<div class="form-group col-sm-2"> -->
+<!-- 										<label for="selectEstado">Estado</label> -->
+<!-- 										<select  name="usuario.cidade.estado" id="selectEstado" class="form-control select"> -->
+<%-- 										<c:forEach var="estado" items="${estados}"> --%>
+<%-- 										<optionv value="${estado.codigo}">${estado.nome}</option> --%>
+<%-- 										</c:forEach> --%>
+<!-- 										</select> -->
+<!-- 									</div> -->
 
 									<div class="form-group col-sm-10">
 										<label for="selectCidade">Cidade</label>
-										<select  name="usuario.cidade" class="form-control select" id="selectCidade">
+										<select  name="usuario.cidade.codigo" class="form-control select" id="selectCidade">
 										<c:forEach var="cidade" items="${cidades}">
-										<option>${cidade.nome} - ${cidade.estado.nome}</option>
+										<option value="${cidade.codigo}">${cidade.nome} - ${cidade.estado.nome}</option>
 										</c:forEach>
 										</select>
 									</div>

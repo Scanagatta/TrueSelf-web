@@ -40,7 +40,7 @@ public class Usuario implements MeuCodigo {
 	private Integer codigo;
 	@Column(nullable = false)
 	private String nome;
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private String email;
 	@Column(nullable = false)
 	private String senha;

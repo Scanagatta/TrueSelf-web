@@ -37,10 +37,13 @@ public class DadosUsuarioController {
 		result.include("usuarios", dao.listarPesquisa(nome));
 		result.redirectTo(BuscaController.class).busca();
 	}
-	
+
 	@Post("/alterar")
 	public void alterar(Usuario usuario) {
+		usuario.setCodigo(IndexController.getUsuarioLogado().getCodigo());
+		usuario.setSenha(IndexController.getUsuarioLogado().getSenha());
 		dao.salvar(usuario);
+		IndexController.setUsuarioLogado(usuario);
 
 		result.include("usuarioLogado", IndexController.getUsuarioLogado());
 		result.redirectTo(HomeController.class).home();
