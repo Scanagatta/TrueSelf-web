@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="<c:url value='/css/style.css'/>" > 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  		<script type="text/javascript" src="<c:url value='/js/bootstrap.js'/>"></script>
+ 		<script type="text/javascript" src="<c:url value='/js/js.js'/>"></script>
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -40,7 +41,7 @@
           </form>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario<span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${usuarioLogado.nome}<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="alterarSenha">Alterar senha</a></li>
                 <li role="separator" class="divider"></li>
@@ -102,11 +103,12 @@
 					<tr>
 						<td>${comentario.data}</td>
 						<td>${comentario.comentario}</td>
-						<td><button class="btn btn-xs glyphicon glyphicon-option-vertical"></button></td>
+						<td id="${comentario.classificacao}" onload="carregarImagem(${comentario.clasificacao})"><img id="imagem" src=""></td>
 					</tr>
 				</c:forEach>
                 </table>
-              </div>
+          
+    </div>
             </div>
           </div>
         </div>

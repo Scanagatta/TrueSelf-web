@@ -39,7 +39,7 @@
 					</form>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario<span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${usuarioLogado.nome}<span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="alterarSenha">Alterar senha</a></li>
 								<li role="separator" class="divider"></li>
@@ -56,7 +56,7 @@
 					</blockquote>
 					
 					<div class="row">
-						<div class="col-xs-12 col-sm-6">
+						<div class="col-xs-12 col-sm-7">
 							<form action="alterar" method="post">
 								<div class="form-group">
 									<label for="inputNome">Nome Completo</label>
