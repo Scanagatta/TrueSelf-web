@@ -33,13 +33,15 @@ public class IndexController {
 		result.include("usuarios", dao.listarPesquisa(nome));
 		result.redirectTo(BuscaController.class).busca();
 	}
-	
+
 	@Post("/login")
 	public void login(Usuario usuario) {
 		if (dao.pesquisarLogin(usuario.getEmail()) != null) {
 			if (dao.pesquisarSenha(usuario.getEmail()).equals(usuario.getSenha())) {
 
 				usuarioLogado = dao.pesquisarUsuario(usuario.getEmail());
+				// usuarioLogado.getCidade().setEstado(estadoDao.pesquisarEstado(usuarioLogado.getCidade().getCodigo()));
+				// usuarioLogado.setCidade(cidadeDao.pesquisarCidade(usuarioLogado.getCidade().getCodigo()));
 
 				result.include("usuarioLogado", usuarioLogado);
 				result.redirectTo(HomeController.class).home();
@@ -84,7 +86,5 @@ public class IndexController {
 	public static void setUsuarioLogado(Usuario usuarioLogado) {
 		IndexController.usuarioLogado = usuarioLogado;
 	}
-	
-	
 
 }

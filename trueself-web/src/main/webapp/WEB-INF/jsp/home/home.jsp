@@ -70,12 +70,20 @@
               </div>
               <div class="col-xs-12">
                 <dl class="dl-horizontal text-center">
+                  <dt>Data de Nascimento</dt>
+                  <dd>${usuarioLogado.dataNascimento}</dd>
+                  <dt>Estado Civil</dt>
+                  <dd>${usuarioLogado.estadoCivil}</dd>
+                  <dt>Sexo</dt>
+                  <dd>${usuarioLogado.sexo}</dd>
                   <dt>Telefone</dt>
                   <dd>${usuarioLogado.telefone}</dd>
-                  <dt>Cidade</dt>
-                  <dd>${usuarioLogado.cidade}</dd>
                   <dt>Email</dt>
                   <dd>${usuarioLogado.email}</dd>
+                  <dt>Cidade</dt>
+                  <dd>${usuarioLogado.cidade.nome}</dd>
+                  <dt>Estado</dt>
+                  <dd>${usuarioLogado.cidade.estado.nome}</dd>
                 </dl>
               </div>
             </div>

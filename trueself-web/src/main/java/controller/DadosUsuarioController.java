@@ -43,7 +43,8 @@ public class DadosUsuarioController {
 		usuario.setCodigo(IndexController.getUsuarioLogado().getCodigo());
 		usuario.setSenha(IndexController.getUsuarioLogado().getSenha());
 		dao.salvar(usuario);
-		IndexController.setUsuarioLogado(usuario);
+
+		IndexController.setUsuarioLogado(dao.pesquisarUsuario(usuario.getEmail()));
 
 		result.include("usuarioLogado", IndexController.getUsuarioLogado());
 		result.redirectTo(HomeController.class).home();

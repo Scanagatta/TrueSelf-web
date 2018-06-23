@@ -56,7 +56,7 @@
 					</blockquote>
 					
 					<div class="row">
-						<div class="col-xs-12 col-sm-9">
+						<div class="col-xs-12 col-sm-6">
 							<form action="alterar" method="post">
 								<div class="form-group">
 									<label for="inputNome">Nome Completo</label>
@@ -64,46 +64,72 @@
 								</div>
 								<div class="form-group">
 									<label for="inputEmail">Email</label>
-									<input type="email" name="usuario.email"  id="inputEmail" class="form-control" placeholder="e-mail" required="required" value="${usuarioLogado.email}">
+									<input type="email" name="usuario.email"  id="inputEmail" class="form-control" placeholder="e-mail" required="required" value="${usuarioLogado.email}" readonly="readonly">
 								</div>
 								
 								<div class="form-group">
 									<label for="rdSexo">Sexo</label>
 									<div class="radio radio-inline" id="rdSexo">
-										<label class="radio-inline"><input type="radio" name="usuario.sexo" id="inlineRadio1" value="masculino">Masculino</label>
-										<label class="radio-inline"><input type="radio" name="usuario.sexo" id="inlineRadio2" value="feminino">Feminino</label>
-										<label class="radio-inline"><input type="radio" name="usuario.sexo" id="inlineRadio3" value="outro">Outro</label>
+	
+										 
+										<label class="radio-inline">
+											<c:if test="${'masculino'== usuarioLogado.sexo}">
+												<input type="radio" name="usuario.sexo" id="inlineRadio1" value="masculino" checked="checked">
+											</c:if> 
+											<c:if test="${! ('masculino'== usuarioLogado.sexo)}">
+												<input type="radio" name="usuario.sexo" id="inlineRadio1" value="masculino">
+											</c:if> 
+										Masculino</label>
+										
+										<label class="radio-inline">
+											<c:if test="${'feminino'== usuarioLogado.sexo}">
+												<input type="radio" name="usuario.sexo" id="inlineRadio2" value="feminino" checked="checked">
+											</c:if> 
+											<c:if test="${! ('feminino'== usuarioLogado.sexo)}">
+												<input type="radio" name="usuario.sexo" id="inlineRadio2" value="feminino">
+											</c:if> 
+										Feminino</label>
+										
+										<label class="radio-inline">
+											<c:if test="${'outro'== usuarioLogado.sexo}">
+												<input type="radio" name="usuario.sexo" id="inlineRadio3" value="outro" checked="checked">
+											</c:if> 
+											<c:if test="${! ('outro'== usuarioLogado.sexo)}">
+												<input type="radio" name="usuario.sexo" id="inlineRadio3" value="outro">
+											</c:if> 
+										Outro</label>
+																			
+										
 									</div>
 								</div>
 
 								<div class="form-group">
 									<label for="inputData">Data de Nascimento</label>
-									<input type="date" name="usuario.dataNascimento" id="inputData" class="form-control" >
+									<input type="date" name="usuario.dataNascimento" id="inputData" class="form-control" value="${usuarioLogado.dataNascimento}"></input>
 								</div>
 								
 								<div class="form-group">
 									<label for="inputEstadoCivil">Estado Civil</label>
-									<input type="text" name="usuario.estadoCivil" id="inputEstadoCivil" class="form-control" placeholder="estado civil" >
+									<input type="text" name="usuario.estadoCivil" id="inputEstadoCivil" class="form-control" placeholder="estado civil" value="${usuarioLogado.estadoCivil}">
 								</div>
-								<div class="row">
-<!-- 									<div class="form-group col-sm-2"> -->
-<!-- 										<label for="selectEstado">Estado</label> -->
-<!-- 										<select  name="usuario.cidade.estado" id="selectEstado" class="form-control select"> -->
-<%-- 										<c:forEach var="estado" items="${estados}"> --%>
-<%-- 										<optionv value="${estado.codigo}">${estado.nome}</option> --%>
-<%-- 										</c:forEach> --%>
-<!-- 										</select> -->
-<!-- 									</div> -->
+								
 
-									<div class="form-group col-sm-10">
+									<div class="form-group">
 										<label for="selectCidade">Cidade</label>
 										<select  name="usuario.cidade.codigo" class="form-control select" id="selectCidade">
 										<c:forEach var="cidade" items="${cidades}">
-										<option value="${cidade.codigo}">${cidade.nome} - ${cidade.estado.nome}</option>
+										
+										<c:if test="${cidade.codigo == usuarioLogado.cidade.codigo}">
+											<option value="${cidade.codigo}" selected="selected">${cidade.nome} - ${cidade.estado.nome}</option>
+										</c:if> 
+										<c:if test="${! (cidade.codigo == usuarioLogado.cidade.codigo)}">
+											<option value="${cidade.codigo}">${cidade.nome} - ${cidade.estado.nome}</option>
+										</c:if>
+										
 										</c:forEach>
 										</select>
 									</div>
-								</div>
+								
 								<div class="form-group">
 									<label for="inputTelefone">Telefone</label>
 									<input type="tel" name="usuario.telefone" id="inputTelefone" class="form-control" placeholder="telefone" value="${usuarioLogado.telefone}">

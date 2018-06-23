@@ -9,7 +9,6 @@ import br.com.caelum.vraptor.Result;
 import dao.CidadeDao;
 import dao.EstadoDao;
 import dao.UsuarioDao;
-import model.Usuario;
 
 @Controller
 @Path("/home")
@@ -43,6 +42,7 @@ public class HomeController {
 
 	@Get("/perfil")
 	public void perfil() {
+
 		result.include("estados", estadoDao.listarEstados());
 		result.include("cidades", cidadeDao.listarCidades());
 		result.include("usuarioLogado", IndexController.getUsuarioLogado());

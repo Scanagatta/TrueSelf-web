@@ -46,9 +46,16 @@ public class UsuarioDao extends GenericDAO<Usuario> {
 	public Usuario pesquisarUsuario(String email) {
 		conectar();
 		try {
+			CidadeDao cidadeDao = new CidadeDao();
+			EstadoDao estadoDao = new EstadoDao();
+
 			TypedQuery<Integer> tq = em.createNamedQuery(Usuario.PESQUISAR_CODIGO, Integer.class);
 			tq.setParameter(1, email);
 			Usuario usuario = em.find(Usuario.class, tq.getSingleResult());
+			
+			usuario.getCidade().setEstado(estadoDao.pesquisarEstado(usuario.getCidade().getCodigo()));
+			usuario.setCidade(cidadeDao.pesquisarCidade(usuario.getCidade().getCodigo()));
+			
 
 			return usuario;
 		} catch (NoResultException e) {

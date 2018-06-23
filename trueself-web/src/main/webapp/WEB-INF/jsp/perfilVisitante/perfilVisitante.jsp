@@ -71,9 +71,17 @@
                   <dt>Data de Nascimento</dt>
                   <dd>${visitado.dataNascimento}</dd>
                   <dt>Sexo</dt>
-                  <dd>${visistado.sexo}</dd>
+                  <dd>${visitado.sexo}</dd>
                   <dt>Email</dt>
                   <dd>${visitado.email}</dd>
+                   <dt>Estado Civil</dt>
+                  <dd>${visitado.estadoCivil}</dd>
+                  <dt>Telefone</dt>
+                  <dd>${visitado.telefone}</dd>
+                  <dt>Cidade</dt>
+                  <dd>${visitado.cidade.nome}</dd>
+                  <dt>Estado</dt>
+                  <dd>${visitado.cidade.estado.nome}</dd>
                 </dl>
               </div>
             </div>

@@ -22,7 +22,7 @@ public class BuscaController {
 	@Get("/busca")
 	public void busca() {
 	}
-	
+
 	@Get("/pesquisa")
 	public void pesquisa(String nome) {
 		result.include("usuarioLogado", IndexController.getUsuarioLogado());
@@ -41,12 +41,12 @@ public class BuscaController {
 		result.include("usuarioLogado", IndexController.getUsuarioLogado());
 		result.redirectTo(HomeController.class).home();
 	}
-	
+
 	@Get("/visitante/{email}")
 	public void visitante(String email) {
 		Usuario visitado = dao.pesquisarUsuario(email);
-		//usuario pode se auto-comentar
-		if(IndexController.getUsuarioLogado().equals(visitado)) {
+		// usuario pode se auto-comentar
+		if (IndexController.getUsuarioLogado().getCodigo().equals(visitado.getCodigo())) {
 			result.redirectTo(this).home();
 		} else {
 			result.include("usuarioLogado", IndexController.getUsuarioLogado());
