@@ -105,7 +105,7 @@
 
 								<div class="form-group">
 									<label for="inputData">Data de Nascimento</label>
-									<input type="date" name="usuario.dataNascimento" id="inputData" class="form-control" value="${usuarioLogado.dataNascimento}"></input>
+									<input type="date" name="usuario.dataNascimento" id="inputData" class="form-control" value="${usuarioLogado.dataNascimento}" required="required"></input>
 								</div>
 								
 								<div class="form-group">
@@ -116,7 +116,7 @@
 
 									<div class="form-group">
 										<label for="selectCidade">Cidade</label>
-										<select  name="usuario.cidade.codigo" class="form-control select" id="selectCidade">
+										<select  name="usuario.cidade.codigo" class="form-control select" id="selectCidade" required="required">
 										<c:forEach var="cidade" items="${cidades}">
 										
 										<c:if test="${cidade.codigo == usuarioLogado.cidade.codigo}">

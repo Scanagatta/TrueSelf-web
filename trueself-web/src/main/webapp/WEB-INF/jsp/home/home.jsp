@@ -103,7 +103,7 @@
 					<tr>
 						<td>${comentario.data}</td>
 						<td>${comentario.comentario}</td>
-						<td id="${comentario.classificacao}" onload="carregarImagem(${comentario.clasificacao})"><img id="imagem" src=""></td>
+						<td id="${comentario.classificacao}" onload="carregarImagem(${comentario.classificacao})"><img id="imagem" src=""></td>
 					</tr>
 				</c:forEach>
                 </table>

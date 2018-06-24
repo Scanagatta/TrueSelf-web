@@ -54,12 +54,9 @@ input, .form-group input, .table-hover tbody tr:hover td, .table-hover tbody tr:
 	color: #FE654F;
 }
 
-h1, a, .navbar-default .navbar-brand, .navbar-default .navbar-brand,.nav.navbar-nav.navbar-right li a, .nav.navbar-nav li a , .navbar-header a .navbar-brand, dl dt{
-    color: #FE654F;
-}
-
+h1, a, .navbar-default .navbar-brand, .navbar-default .navbar-brand,.nav.navbar-nav.navbar-right li a, .nav.navbar-nav li a , .navbar-header a .navbar-brand, dl dt,
 dl dd, .table-responsive{
-	color: #fed99b;
+    color: #FE654F;
 }
 
 blockquote{
