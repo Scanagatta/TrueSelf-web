@@ -103,7 +103,7 @@
 					<tr>
 						<td>${comentario.data}</td>
 						<td>${comentario.comentario}</td>
-						<td id="${comentario.classificacao}" onload="carregarImagem(${comentario.classificacao})"><img id="imagem" src=""></td>
+						<td id="${comentario.classificacao}" ><img id="imagem" src="https://png.icons8.com/flat_round/50/000000/question-mark.png" onload="carregarImagem(${comentario.classificacao},imagem)" class="img-responsive"></td>
 					</tr>
 				</c:forEach>
                 </table>
