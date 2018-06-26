@@ -12,6 +12,7 @@ import dao.ComentarioDao;
 import dao.EstadoDao;
 import dao.UsuarioDao;
 import model.Comentario;
+import model.Usuario;
 
 @Controller
 @Path("/home")
@@ -49,18 +50,19 @@ public class HomeController {
 	@Post("/avaliar")
 	public void avaliar(Comentario comentario) {
 		Comentario comentario2 = comentarioDao.pesquisarComentario(comentario.getCodigo());
+		Usuario usuario = dao.pesquisarUsuarioPorCodigo(comentario2.getUsuarioEnvia().getCodigo());
 		switch (comentario.getClassificacao()) {
 		case 1:
 			comentario2.setClassificacao(1);
-			comentario2.getUsuarioEnvia().setQtdAnjo(comentario2.getUsuarioEnvia().getQtdAnjo()+1);
+			usuario.setQtdAnjo(usuario.getQtdAnjo()+1);
 			break;
 		case 2:
 			comentario2.setClassificacao(2);
-			comentario2.getUsuarioEnvia().setQtdDemonio(comentario2.getUsuarioEnvia().getQtdDemonio()+1);
+			usuario.setQtdDemonio(usuario.getQtdDemonio()+1);
 			break;
 		case 3:
 			comentario2.setClassificacao(3);
-			comentario2.getUsuarioEnvia().setQtdNeutro(comentario2.getUsuarioEnvia().getQtdNeutro()+1);
+			usuario.setQtdNeutro(usuario.getQtdNeutro()+1);
 			break;
 		default:
 			break;
