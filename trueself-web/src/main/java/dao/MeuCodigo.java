@@ -1,6 +1,8 @@
 package dao;
 
-public interface MeuCodigo {
+import java.io.Serializable;
+
+public interface MeuCodigo extends Serializable {
 
 	Integer getCodigo();
 	

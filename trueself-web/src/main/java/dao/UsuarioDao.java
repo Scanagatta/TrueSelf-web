@@ -55,9 +55,20 @@ public class UsuarioDao extends GenericDAO<Usuario> {
 			
 			usuario.getCidade().setEstado(estadoDao.pesquisarEstado(usuario.getCidade().getCodigo()));
 			usuario.setCidade(cidadeDao.pesquisarCidade(usuario.getCidade().getCodigo()));
-			
-
 			return usuario;
+		} catch (NoResultException e) {
+			return null;
+		} finally {
+			desconectar();
+		}
+	}
+	
+	public Usuario pesquisarUsuarioPorCodigo(Integer codigo) {
+		conectar();
+		try {
+			TypedQuery<Usuario> tq = em.createNamedQuery(Usuario.PESQUISAR_POR_CODIGO, Usuario.class);
+			tq.setParameter(1, codigo);
+			return tq.getSingleResult();
 		} catch (NoResultException e) {
 			return null;
 		} finally {

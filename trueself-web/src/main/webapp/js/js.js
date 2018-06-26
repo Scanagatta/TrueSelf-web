@@ -11,3 +11,11 @@ function carregarImagem(valor,imagem){
 		imagem.src = "https://png.icons8.com/color/50/000000/question-mark.png";
 	}
 }
+
+function mostrarDiv(el){
+	 var display = el.style.display;
+     if(display == "none")
+         document.getElementById(el).style.display = 'block';
+     else
+         document.getElementById(el).style.display = 'none';
+}

@@ -100,11 +100,51 @@
                     </tr>
                   </thead>
                   <c:forEach var="comentario" items="${usuarioLogado.comentarios}">
-					<tr>
+					<tr id="${comentario.codigo}" onclick="mostrarDiv(avaliar${comentario.codigo})">
 						<td>${comentario.data}</td>
 						<td>${comentario.comentario}</td>
-						<td id="${comentario.classificacao}" ><img id="imagem" src="https://png.icons8.com/flat_round/50/000000/question-mark.png" onload="carregarImagem(${comentario.classificacao},imagem)" class="img-responsive"></td>
+						<td><img id="imagem" src="https://png.icons8.com/flat_round/50/000000/question-mark.png" onload="carregarImagem(${comentario.classificacao},imagem)" class="img-responsive"></td>
 					</tr>
+					<div id="avaliar${comentario.codigo}" style="">
+						<form action="avaliar" method="post">
+						<input type="hidden" name="comentario.codigo" value="${comentario.codigo}">
+								<div class="form-group">
+									<label>Avaliar</label>
+									<div class="radio radio-inline" id="rdAvaliacao">
+										<label class="radio-inline">
+											<c:if test="${'1'== comentario.classificacao}">
+												<input type="radio" name="comentario.classificacao" id="inlineRadio1" value="1" checked="checked">
+											</c:if> 
+											<c:if test="${! ('1'== comentario.classificacao)}">
+												<input type="radio" name="comentario.classificacao" id="inlineRadio1" value="1">
+											</c:if> 
+										<img src="https://png.icons8.com/color/50/000000/angel.png" alt="" class="img-responsive">
+										</label>
+										
+										<label class="radio-inline">
+											<c:if test="${'2'== comentario.classificacao}">
+												<input type="radio" name="comentario.classificacao" id="inlineRadio2" value="2" checked="checked">
+											</c:if> 
+											<c:if test="${! ('2'== comentario.classificacao)}">
+												<input type="radio" name="comentario.classificacao" id="inlineRadio2" value="2">
+											</c:if> 
+										<img src="https://png.icons8.com/color/50/000000/lucifer.png" alt="" class="img-responsive">
+										</label>
+										
+										<label class="radio-inline">
+											<c:if test="${'3'== comentario.classificacao}">
+												<input type="radio" name="comentario.classificacao" id="inlineRadio3" value="3" checked="checked">
+											</c:if> 
+											<c:if test="${! ('3'== comentario.classificacao)}">
+												<input type="radio" name="comentario.classificacao" id="inlineRadio3" value="3">
+											</c:if> 
+										<img src="https://png.icons8.com/flat_round/50/000000/question-mark.png" alt="" class="img-responsive">
+										</label>	
+									</div>
+									<button class="btn btn-cadastrar">Avaliar</button>
+								</div>
+						</form>
+					</div>
 				</c:forEach>
                 </table>
           

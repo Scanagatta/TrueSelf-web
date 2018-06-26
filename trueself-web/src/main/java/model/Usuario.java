@@ -26,7 +26,8 @@ import dao.MeuCodigo;
 @NamedQueries({ @NamedQuery(name = Usuario.PESQUISAR_LOGIN, query = "select email from Usuario where email = ?1"),
 		@NamedQuery(name = Usuario.PESQUISAR_SENHA, query = "select senha from Usuario where email = ?1"),
 		@NamedQuery(name = Usuario.PESQUISAR_CODIGO, query = "select codigo from Usuario where email = ?1"),
-		@NamedQuery(name = Usuario.PESQUISAR_NOMES, query = "select codigo from Usuario where nome like ?1") })
+		@NamedQuery(name = Usuario.PESQUISAR_NOMES, query = "select codigo from Usuario where nome like ?1"),
+		@NamedQuery(name= Usuario.PESQUISAR_POR_CODIGO, query="from Usuario where codigo = ?1")})
 
 public class Usuario implements MeuCodigo {
 
@@ -34,6 +35,8 @@ public class Usuario implements MeuCodigo {
 	public static final String PESQUISAR_SENHA = "pesquisaSenha";
 	public static final String PESQUISAR_CODIGO = "pesquisaCodigo";
 	public static final String PESQUISAR_NOMES = "pesquisaPorNome";
+	public static final String PESQUISAR_POR_CODIGO = "pesquisaPorCodigo";
+
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
