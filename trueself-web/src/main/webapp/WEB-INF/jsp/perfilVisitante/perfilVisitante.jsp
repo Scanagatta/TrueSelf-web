@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="<c:url value='/css/style.css'/>" > 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  		<script type="text/javascript" src="<c:url value='/js/bootstrap.js'/>"></script>
+ 		<script type="text/javascript" src="<c:url value='/js/js.js'/>"></script>
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -31,12 +32,7 @@
             <li><a href="home">Home</a></li>
             <li><a href="perfil">Perfil</a></li>
           </ul>
-          <form class="navbar-form navbar-right" action="busca">
-            <div class="form-group">
-              <input name="nome" type="text" class="form-control" placeholder="Buscar">
-            </div>
-          </form>
-          <ul class="nav navbar-nav navbar-right">
+           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${usuarioLogado.nome}<span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -46,6 +42,11 @@
               </ul>
             </li>
           </ul>
+          <form class="navbar-form navbar-right" action="busca">
+            <div class="form-group">
+              <input name="nome" type="text" class="form-control" placeholder="Buscar">
+            </div>
+          </form>
           </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
@@ -93,12 +94,14 @@
                     <tr>
                     <td>Data</td>
                       <td>Comentario</td>
+                      <td>Avaliacao</td>
                     </tr>
                   </thead>
                   <c:forEach var="comentario" items="${visitado.comentarios}">
 					<tr>
 						<td>${comentario.data}</td>
 						<td>${comentario.comentario}</td>
+						<td><img id="imagem" src="https://png.icons8.com/flat_round/50/000000/question-mark.png" onload="carregarImagem(${comentario.classificacao},imagem)" class="img-responsive"></td>
 					</tr>
 				</c:forEach>
                 </table>

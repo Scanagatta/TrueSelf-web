@@ -34,12 +34,7 @@
             <li class="active"><a href="#">Home</a></li>
             <li><a href="perfil">Perfil</a></li>
           </ul>
-          <form class="navbar-form navbar-right" action="busca" method="get">
-            <div class="form-group">
-              <input name="nome" type="text" class="form-control" placeholder="Buscar">
-            </div>
-          </form>
-          <ul class="nav navbar-nav navbar-right">
+             <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${usuarioLogado.nome}<span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -49,6 +44,11 @@
               </ul>
             </li>
           </ul>
+          <form class="navbar-form navbar-right" action="busca" method="get">
+            <div class="form-group">
+              <input name="nome" type="text" class="form-control" placeholder="Buscar">
+            </div>
+          </form>
           </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>

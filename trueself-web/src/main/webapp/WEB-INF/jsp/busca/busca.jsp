@@ -31,12 +31,7 @@
             <li><a href="home">Home</a></li>
             <li><a href="perfil">Perfil</a></li>
           </ul>
-          <form class="navbar-form navbar-right" action="pesquisa">
-            <div class="form-group">
-              <input name=nome type="text" class="form-control" placeholder="Buscar">
-            </div>
-          </form>
-          <ul class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario<span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -46,6 +41,11 @@
               </ul>
             </li>
           </ul>
+          <form class="navbar-form navbar-right" action="pesquisa">
+            <div class="form-group">
+              <input name=nome type="text" class="form-control" placeholder="Buscar">
+            </div>
+          </form>
           </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
