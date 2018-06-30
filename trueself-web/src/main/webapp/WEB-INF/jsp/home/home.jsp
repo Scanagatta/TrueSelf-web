@@ -46,7 +46,7 @@
           </ul>
           <form class="navbar-form navbar-right" action="busca" method="get">
             <div class="form-group">
-              <input name="nome" type="text" class="form-control" placeholder="Buscar">
+              <input name="nome" type="text" class="form-control" placeholder="Buscar usuário">
             </div>
           </form>
           </div><!-- /.navbar-collapse -->
@@ -54,22 +54,23 @@
         </nav>
         <div class="container-fluid">
           <div class="row">
-            <div class="col-xs-12 col-sm-6">
+            <div class="col-xs-12 col-sm-6 infUsuario">
               <blockquote>
                 <h1>${usuarioLogado.nome}</h1>
               </blockquote>
               
-              <c:if test="${usuarioLogado.sexo eq 'masculino'}">
-					<img src=https://www.altoastral.com.br/wp-content/uploads/2016/08/homer-750x500.jpg class="col-sm-6 img-responsive imagemPerfil">
-			  </c:if>
-			  
-			  <c:if test="${usuarioLogado.sexo eq 'feminino'}">
-					<img src=https://imagem.band.com.br/f_361478.jpg class="col-sm-6 img-responsive imagemPerfil">
-			  </c:if>
-			  
-			   <c:if test="${usuarioLogado.sexo eq 'outro'}">
-					<img src=http://static1.purepeople.com.br/articles/2/19/06/42/@/2215427-pabllo-vittar-cancela-apresentacao-no-cr-950x0-1.jpg class="col-sm-6 img-responsive imagenmPerfil">
-			  </c:if>
+	              <c:if test="${usuarioLogado.sexo eq 'masculino'}">
+						<img src=https://www.altoastral.com.br/wp-content/uploads/2016/08/homer-750x500.jpg class="col-sm-6 imagemPerfil img-responsive">
+				  </c:if>
+				  
+				  <c:if test="${usuarioLogado.sexo eq 'feminino'}">
+						<img src=https://imagem.band.com.br/f_361478.jpg class="col-sm-6 imagemPerfil img-responsive">
+				  </c:if>
+				  
+				   <c:if test="${usuarioLogado.sexo eq 'outro'}">
+						<img src=http://static1.purepeople.com.br/articles/2/19/06/42/@/2215427-pabllo-vittar-cancela-apresentacao-no-cr-950x0-1.jpg class="col-sm-6 imagemPerfil img-responsive">
+				  </c:if>
+              
               
               <div class="col-xs-12 col-sm-6">
                 <dl class="dl-horizontal text-center">
@@ -100,15 +101,15 @@
                 </dl>
               </div>
             </div>
-            <div class="col-xs-12 col-sm-6">
-              <h1>Comentarios</h1>
+            <div class="col-xs-12 col-sm-6 infComentario">
+              <h1>Comentários</h1>
               <div class="table-responsive">
                 <table class="table table-hover">
                   <thead>
                     <tr>
                       <td>Data</td>
-                      <td>Comentario</td>
-                      <td>Avaliacao</td>
+                      <td>Comentário</td>
+                      <td>Avaliação</td>
                     </tr>
                   </thead>
                   <c:forEach var="comentario" items="${usuarioLogado.comentarios}">
@@ -120,7 +121,7 @@
 					<div id="avaliar${comentario.codigo}" style="display: none">
 						<form action="avaliar" method="post">
 						<input type="hidden" name="comentario.codigo" value="${comentario.codigo}">
-								<div class="form-group">
+								<div class="form-group divAvaliar">
 									<label>Avaliar</label>
 									<div class="radio radio-inline" id="rdAvaliacao">
 										<label class="radio-inline">
@@ -153,7 +154,7 @@
 										<img src="https://png.icons8.com/flat_round/50/000000/question-mark.png" alt="" class="img-responsive">
 										</label>	
 									</div>
-									<button class="btn btn-cadastrar">Avaliar</button>
+									<button class="btn btn-cadastrar" style="margin-left: 10px">Avaliar</button>
 								</div>
 						</form>
 					</div>

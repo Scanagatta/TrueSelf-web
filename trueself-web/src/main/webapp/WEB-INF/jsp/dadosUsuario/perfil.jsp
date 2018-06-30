@@ -56,7 +56,7 @@
 					</blockquote>
 					
 					<div class="row">
-						<div class="col-xs-12 col-sm-7">
+						<div class="col-xs-12 col-sm-6">
 							<form action="alterar" method="post">
 								<div class="form-group">
 									<label for="inputNome">Nome Completo</label>
@@ -108,11 +108,52 @@
 									<input type="date" name="usuario.dataNascimento" id="inputData" class="form-control" value="${usuarioLogado.dataNascimento}" required="required"></input>
 								</div>
 								
+<!-- 								<div class="form-group"> -->
+<!-- 									<label for="inputEstadoCivil">Estado Civil</label> -->
+<%-- 									<input type="text" name="usuario.estadoCivil" id="inputEstadoCivil" class="form-control" placeholder="estado civil" value="${usuarioLogado.estadoCivil}"> --%>
+<!-- 								</div> -->
+								
 								<div class="form-group">
 									<label for="inputEstadoCivil">Estado Civil</label>
-									<input type="text" name="usuario.estadoCivil" id="inputEstadoCivil" class="form-control" placeholder="estado civil" value="${usuarioLogado.estadoCivil}">
+									<select name="usuario.estadoCivil" class="form-control select" id="selectEstadoCivil">	
+										
+										<c:if test="${'solteiro' == usuarioLogado.estadoCivil}">
+											<option value="solteiro" selected="selected">solteiro</option>
+										</c:if> 
+										<c:if test="${! ('solteiro'== usuarioLogado.estadoCivil)}">
+											<option value="solteiro">solteiro</option>
+										</c:if> 	
+										
+										<c:if test="${'namorando' == usuarioLogado.estadoCivil}">
+											<option value="namorando" selected="selected">namorando</option>
+										</c:if> 
+										<c:if test="${! ('namorando'== usuarioLogado.estadoCivil)}">
+											<option value="namorando">namorando</option>
+										</c:if> 	
+										
+										<c:if test="${'casado' == usuarioLogado.estadoCivil}">
+											<option value="casado" selected="selected">casado</option>
+										</c:if> 
+										<c:if test="${! ('casado'== usuarioLogado.estadoCivil)}">
+											<option value="casado">casado</option>
+										</c:if> 	
+										
+										<c:if test="${'divorciado' == usuarioLogado.estadoCivil}">
+											<option value="divorciado" selected="selected">divorciado</option>
+										</c:if> 
+										<c:if test="${! ('divorciado'== usuarioLogado.estadoCivil)}">
+											<option value="divorciado">divorciado</option>
+										</c:if> 
+										
+										<c:if test="${'viúvo' == usuarioLogado.estadoCivil}">
+											<option value="viúvo" selected="selected">viúvo</option>
+										</c:if> 
+										<c:if test="${! ('viúvo'== usuarioLogado.estadoCivil)}">
+											<option value="viúvo">viúvo</option>
+										</c:if> 
+										
+									</select>
 								</div>
-								
 
 									<div class="form-group">
 										<label for="selectCidade">Cidade</label>

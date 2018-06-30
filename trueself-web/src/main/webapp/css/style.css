@@ -9,8 +9,7 @@
 }
 
 .imagemPerfil{
-	width: 40%;
-	height: 40%;
+	height: 180px;
 }
 
 .imgBusca{
@@ -30,6 +29,22 @@ body{
 	color: red;
 }
 
+#rdAvaliacao{
+	margin: 0px;
+	padding-left: 10px;
+}
+
+.infComentario{
+	background-color: #FED99B;
+}
+
+.infUsuario{
+	background-color: #D6EFFF;
+}
+
+.divAvaliar{
+	background-color: #FED18C;
+}
 
 .nav > li > a:focus, .nav > li > a:hover{
 	background-color: #FE654F;
@@ -53,6 +68,9 @@ input, .form-group input, .table-hover tbody tr:hover td, .table-hover tbody tr:
 	background-color: #D6EFFF;
 }
 
+#rdAvaliacao label:hover {
+  background-color: #FE654F;
+}
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover,
  .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover{
