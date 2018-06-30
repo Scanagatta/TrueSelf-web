@@ -105,7 +105,7 @@
 						<td>${comentario.comentario}</td>
 						<td><img id="imagem${comentario.codigo}" src="https://png.icons8.com/flat_round/50/000000/question-mark.png" onload="carregarImagem(${comentario.classificacao},imagem${comentario.codigo})" class="img-responsive"></td>
 					</tr>
-					<div id="avaliar${comentario.codigo}" style="">
+					<div id="avaliar${comentario.codigo}" style="display: none">
 						<form action="avaliar" method="post">
 						<input type="hidden" name="comentario.codigo" value="${comentario.codigo}">
 								<div class="form-group">

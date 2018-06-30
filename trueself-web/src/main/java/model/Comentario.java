@@ -13,6 +13,7 @@ import javax.persistence.NamedQuery;
 
 import dao.MeuCodigo;
 
+@SuppressWarnings("serial")
 @Entity
 @NamedQueries({@NamedQuery(name = Comentario.GET_COMENTARIO, query = "from Comentario where codigo = ?1")})
 	

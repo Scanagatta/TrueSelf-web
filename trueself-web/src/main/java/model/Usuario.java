@@ -21,6 +21,7 @@ import javax.persistence.Transient;
 
 import dao.MeuCodigo;
 
+@SuppressWarnings("serial")
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @NamedQueries({ @NamedQuery(name = Usuario.PESQUISAR_LOGIN, query = "select email from Usuario where email = ?1"),
@@ -225,5 +226,16 @@ public class Usuario implements MeuCodigo {
 	public void setSenhaAntiga(String novaSenha) {
 		this.senhaAntiga = novaSenha;
 	}
-
+	
+	public void incrementaAnjo() {
+		qtdAnjo++;
+	}
+	
+	public void incrementaDemonio() {
+		qtdDemonio++;
+	}
+	
+	public void incrementaNeutro() {
+		qtdNeutro++;
+	}
 }

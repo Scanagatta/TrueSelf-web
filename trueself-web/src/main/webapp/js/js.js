@@ -14,8 +14,9 @@ function carregarImagem(valor,imagem){
 
 function mostrarDiv(el){
 	 var display = el.style.display;
-     if(display == "none")
-         document.getElementById(el).style.display = 'block';
-     else
-         document.getElementById(el).style.display = 'none';
+     if(display == "none"){
+    	 el.style.display = 'block';
+     } else {
+    	 el.style.display = 'none'; 
+     }
 }

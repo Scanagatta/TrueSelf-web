@@ -6,6 +6,7 @@ import javax.persistence.Id;
 
 import dao.MeuCodigo;
 
+@SuppressWarnings("serial")
 @Entity
 public class Estado implements MeuCodigo {
 
