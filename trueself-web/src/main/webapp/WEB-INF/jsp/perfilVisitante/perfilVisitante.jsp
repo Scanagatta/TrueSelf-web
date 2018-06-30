@@ -56,7 +56,20 @@
               <blockquote>
                 <h1>${visitado.nome}</h1>
               </blockquote>
-              <img src="https://pm1.narvii.com/6853/47223b3b799bb2f697d37f3d1f5c7e160e492a95v2_hq.jpg" class="col-sm-6 img-responsive">
+              
+              
+               <c:if test="${visitado.sexo eq 'masculino'}">
+					<img src=https://www.altoastral.com.br/wp-content/uploads/2016/08/homer-750x500.jpg class="col-sm-6 img-responsive imagemPerfil">
+			  </c:if>
+			  
+			  <c:if test="${visitado.sexo eq 'feminino'}">
+					<img src=https://imagem.band.com.br/f_361478.jpg class="col-sm-6 img-responsive imagemPerfil">
+			  </c:if>
+			  
+			   <c:if test="${visitado.sexo eq 'outro'}">
+					<img src=http://static1.purepeople.com.br/articles/2/19/06/42/@/2215427-pabllo-vittar-cancela-apresentacao-no-cr-950x0-1.jpg class="col-sm-6 img-responsive imagenmPerfil">
+			  </c:if>
+            
               <div class="col-xs-12 col-sm-6">
                 <dl class="dl-horizontal text-center">
                   <dt><img src="https://png.icons8.com/color/50/000000/angel.png" alt="" class="img-responsive"></dt>

@@ -58,7 +58,19 @@
               <blockquote>
                 <h1>${usuarioLogado.nome}</h1>
               </blockquote>
-              <img src="https://www.allkpop.com/upload/2017/01/af_org/dindin-black-pink-bewhy_1484083826_af_org.jpg" class="col-sm-6 img-responsive">
+              
+              <c:if test="${usuarioLogado.sexo eq 'masculino'}">
+					<img src=https://www.altoastral.com.br/wp-content/uploads/2016/08/homer-750x500.jpg class="col-sm-6 img-responsive imagemPerfil">
+			  </c:if>
+			  
+			  <c:if test="${usuarioLogado.sexo eq 'feminino'}">
+					<img src=https://imagem.band.com.br/f_361478.jpg class="col-sm-6 img-responsive imagemPerfil">
+			  </c:if>
+			  
+			   <c:if test="${usuarioLogado.sexo eq 'outro'}">
+					<img src=http://static1.purepeople.com.br/articles/2/19/06/42/@/2215427-pabllo-vittar-cancela-apresentacao-no-cr-950x0-1.jpg class="col-sm-6 img-responsive imagenmPerfil">
+			  </c:if>
+              
               <div class="col-xs-12 col-sm-6">
                 <dl class="dl-horizontal text-center">
                   <dt><img src="https://png.icons8.com/color/50/000000/angel.png" alt="" class="img-responsive"></dt>
