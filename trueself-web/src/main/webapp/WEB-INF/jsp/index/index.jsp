@@ -22,7 +22,7 @@
 				</div>
 				<div class="col-xs-12 col-sm-6">
 				<div>
-				<img src="https://www.allkpop.com/upload/2017/01/af_org/dindin-black-pink-bewhy_1484083826_af_org.jpg" class="img-responsive">
+				<img src="https://www.papeldeparede.etc.br/fotos/wp-content/uploads/bem_mal.jpg" class="img-responsive">
 				</div>		
 				</div>
 				<ul class="nav nav-tabs col-xs-12 col-sm-6">
