@@ -50,24 +50,25 @@ public class HomeController {
 	@Post("/avaliar")
 	public void avaliar(Comentario comentario) {
 		Comentario comentario2 = comentarioDao.pesquisarComentario(comentario.getCodigo());
-		Usuario usuario = dao.pesquisarUsuarioPorCodigo(comentario2.getUsuarioEnvia().getCodigo());
+		Usuario usuario = comentario2.getUsuarioEnvia();
 		switch (comentario.getClassificacao()) {
 		case 1:
 			comentario2.setClassificacao(1);
-			usuario.setQtdAnjo(usuario.getQtdAnjo()+1);
+			usuario.incrementaAnjo();
 			break;
 		case 2:
 			comentario2.setClassificacao(2);
-			usuario.setQtdDemonio(usuario.getQtdDemonio()+1);
+			usuario.incrementaDemonio();;
 			break;
 		case 3:
 			comentario2.setClassificacao(3);
-			usuario.setQtdNeutro(usuario.getQtdNeutro()+1);
+			usuario.incrementaNeutro();
 			break;
 		default:
 			break;
 		}
 		dao.salvar(comentario2.getUsuarioRecebe());
+		dao.salvar(usuario);
 		comentarioDao.salvar(comentario2);
 		//atualizar o usuario logado
 		IndexController.setUsuarioLogado(dao.pesquisarUsuarioPorCodigo(IndexController.getUsuarioLogado().getCodigo()));

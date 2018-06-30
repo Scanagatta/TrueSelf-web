@@ -9,6 +9,7 @@ import javax.persistence.NamedQuery;
 
 import dao.MeuCodigo;
 
+@SuppressWarnings("serial")
 @Entity
 @NamedQueries({
 		@NamedQuery(name = Cidade.PESQUISAR_POR_ESTADO, query = "select c from Cidade c where estado = ?1") })
