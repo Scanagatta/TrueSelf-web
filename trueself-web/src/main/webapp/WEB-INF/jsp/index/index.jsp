@@ -7,7 +7,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Cadastre-se ou faca login no TrueSelf</title>
+		<title>Cadastre-se ou faça login no TrueSelf</title>
 		<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>" > 
 		<link rel="stylesheet" href="<c:url value='/css/style.css'/>" > 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -22,14 +22,14 @@
 					<h1>TrueSelf</h1>
 				</div>
 				<div class="col-xs-12 col-sm-6">
-				<div>
-				<img src="https://www.papeldeparede.etc.br/fotos/wp-content/uploads/bem_mal.jpg" class="img-responsive">
-				</div>		
+				<img src="https://www.papeldeparede.etc.br/fotos/wp-content/uploads/bem_mal.jpg" class="img-responsive">	
 				</div>
+				<div class="col-xs-12 col-sm-6">
 				<ul class="nav nav-tabs col-xs-12 col-sm-6">
 					<li class="active col-xs-6"><a href="#first-tab" data-toggle="tab">Login</a></li>
 					<li class=" col-xs-6"><a href="#second-tab" data-toggle="tab">Cadastro</a></li>
 				</ul>
+				</div>
 				<div class="tab-content">
 					<div class="tab-pane active in" id="first-tab">
 						<div class="col-xs-12 col-sm-6 paginas">
@@ -38,8 +38,8 @@
 								<div class="form-group botoes">
 									<ul class="list-inline">
 										<li><button class="btn btn-primary"><i class="fa fa-facebook"></i></button></li>
+										<li><a class="btn btn-danger" href="https://plus.google.com/u/2/112193272469485101144"><i class="fa fa-google-plus"></i></a></li>
 										<li><button class="btn btn-info"><i class="fa fa-twitter"></i></button></li>
-										<li><button class="btn btn-danger"><i class="fa fa-google-plus"></i></button></li>
 									</ul>
 								</div>
 								<hr>
@@ -78,7 +78,7 @@
 								</div>
 								<div class="form-group">
 									<c:if test="${emailJaCadastrado eq 'vazio'}">
-									<label class="erro">O email já está sendo usado</label>
+									<label class="erro">O email já está sendo usado, tente outro</label>
 									</c:if>
 									<label for="inputEmail" class="sr-only">E-mail</label>
 									<input id="inputEmail" class="form-control" placeholder="e-mail"  name="usuario.email" required="required" type="email">
@@ -115,7 +115,7 @@
         <h4 class="modal-title">Termos de uso</h4>
       </div>
       <div class="modal-body">
-        <p>One fine body&hellip;</p>
+        <p>Este é um trabalho desenvolvido por acadêmicos da 5ª fase do curso de Tecnologia em Análise e Desenvolvimentos de Sistemas da UNOESC - Xanxerê <br><br> Ao aceitar os termos de uso e completar o cadastro, você está ciente de que esta é uma rede social pública e é crime realizar bullying virtual, tome cuidado! </p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-cadastrar" data-dismiss="modal">Fechar</button>

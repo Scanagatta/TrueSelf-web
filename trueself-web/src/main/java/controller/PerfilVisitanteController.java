@@ -9,7 +9,9 @@ import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
+import dao.CidadeDao;
 import dao.ComentarioDao;
+import dao.EstadoDao;
 import dao.UsuarioDao;
 import model.Comentario;
 import model.Usuario;
@@ -17,16 +19,21 @@ import model.Usuario;
 @Controller
 @Path("/visitante")
 public class PerfilVisitanteController {
-	
 
 	@Inject
 	private Result result;
 
 	@Inject
 	private UsuarioDao dao;
-	
+
 	@Inject
 	private ComentarioDao comentarioDao;
+
+	@Inject
+	private EstadoDao estadoDao;
+
+	@Inject
+	private CidadeDao cidadeDao;
 
 	@Get("/perfilVisitante")
 	public void perfilVisitante() {
@@ -42,7 +49,7 @@ public class PerfilVisitanteController {
 		result.include("usuarioLogado", IndexController.getUsuarioLogado());
 		result.redirectTo(HomeController.class).home();
 	}
-	
+
 	@Get("/busca")
 	public void busca(String nome) {
 		result.include("usuarioLogado", IndexController.getUsuarioLogado());
@@ -53,10 +60,12 @@ public class PerfilVisitanteController {
 
 	@Get("/perfil")
 	public void perfil() {
+		result.include("estados", estadoDao.listarEstados());
+		result.include("cidades", cidadeDao.listarCidades());
 		result.include("usuarioLogado", IndexController.getUsuarioLogado());
 		result.redirectTo(DadosUsuarioController.class).perfil();
 	}
-	
+
 	@Post("/comentar")
 	public void comentar(Comentario comentario, String email) {
 		comentario.setData(LocalDate.now());

@@ -7,6 +7,8 @@ import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
+import dao.CidadeDao;
+import dao.EstadoDao;
 import dao.UsuarioDao;
 import model.Usuario;
 
@@ -19,6 +21,12 @@ public class AlterarSenhaController {
 
 	@Inject
 	private UsuarioDao dao;
+
+	@Inject
+	private EstadoDao estadoDao;
+
+	@Inject
+	private CidadeDao cidadeDao;
 
 	@Get("/alterar")
 	public void alterar() {
@@ -66,6 +74,8 @@ public class AlterarSenhaController {
 
 	@Get("/perfil")
 	public void perfil() {
+		result.include("estados", estadoDao.listarEstados());
+		result.include("cidades", cidadeDao.listarCidades());
 		result.include("usuarioLogado", IndexController.getUsuarioLogado());
 		result.redirectTo(DadosUsuarioController.class).perfil();
 	}

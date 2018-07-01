@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>" > 
 		<link rel="stylesheet" href="<c:url value='/css/style.css'/>" > 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="<c:url value='/js/jquery.mask.min.js'/>"></script>
 		<script type="text/javascript" src="<c:url value='/js/bootstrap.js'/>"></script>
 	</head>
 	<body>
@@ -30,7 +31,7 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li><a href="home">Home</a></li>
-						<li class="active"><a href="#">Perfil</a></li>
+						<li class="active"><a href="#">Editar Perfil</a></li>
 					</ul>
 							<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
@@ -44,7 +45,7 @@
 					</ul>
 					<form class="navbar-form navbar-right" action="busca">
 						<div class="form-group">
-							<input name="nome" type="search" class="form-control" placeholder="Buscar">
+							<input name="nome" type="search" class="form-control" placeholder="Buscar usuário">
 						</div>
 					</form>
 					</div><!-- /.navbar-collapse -->
@@ -52,7 +53,7 @@
 				</nav>
 				<div class="container-fluid">
 					<blockquote>
-						<h1>Meu Perfil</h1>
+						<h1>Editar Meu Perfil</h1>
 					</blockquote>
 					
 					<div class="row">
@@ -173,7 +174,8 @@
 								
 								<div class="form-group">
 									<label for="inputTelefone">Telefone</label>
-									<input type="tel" name="usuario.telefone" id="inputTelefone" class="form-control" placeholder="telefone" value="${usuarioLogado.telefone}">
+									<input type="tel" name="usuario.telefone" id="inputTelefone" class="form-control" placeholder="telefone" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" value="${usuarioLogado.telefone}">
+									<script type="text/javascript">$("#inputTelefone").mask("(00) 0000-00009");</script>
 								</div>
 								<div class="form-group">
 								<button type="submit" class="btn btn-cadastrar" value="salvar">Salvar</button>

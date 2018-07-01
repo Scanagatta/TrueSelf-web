@@ -29,13 +29,13 @@ public class HomeController {
 
 	@Inject
 	private CidadeDao cidadeDao;
-	
+
 	@Inject
 	private ComentarioDao comentarioDao;
 
 	@Get("/home")
 	public void home() {
-		
+
 	}
 
 	@Get("/busca")
@@ -58,7 +58,8 @@ public class HomeController {
 			break;
 		case 2:
 			comentario2.setClassificacao(2);
-			usuario.incrementaDemonio();;
+			usuario.incrementaDemonio();
+			;
 			break;
 		case 3:
 			comentario2.setClassificacao(3);
@@ -70,12 +71,12 @@ public class HomeController {
 		dao.salvar(comentario2.getUsuarioRecebe());
 		dao.salvar(usuario);
 		comentarioDao.salvar(comentario2);
-		//atualizar o usuario logado
+		// atualizar o usuario logado
 		IndexController.setUsuarioLogado(dao.pesquisarUsuarioPorCodigo(IndexController.getUsuarioLogado().getCodigo()));
 		result.include("usuarioLogado", IndexController.getUsuarioLogado());
 		result.redirectTo(this).home();
 	}
-	
+
 	@Get("/perfil")
 	public void perfil() {
 

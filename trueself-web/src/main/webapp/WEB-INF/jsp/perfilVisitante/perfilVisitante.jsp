@@ -5,7 +5,7 @@
 <html>
   <head>
     <title>TrueSelf</title>
-    <meta charset="US-ASCII">
+    <meta charset="UTF-8">
      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Andika" />
 		<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>" > 
 		<link rel="stylesheet" href="<c:url value='/css/style.css'/>" > 
@@ -30,7 +30,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><a href="home">Home</a></li>
-            <li><a href="perfil">Perfil</a></li>
+            <li><a href="perfil">Editar Perfil</a></li>
           </ul>
            <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -70,15 +70,23 @@
 						<img src=http://static1.purepeople.com.br/articles/2/19/06/42/@/2215427-pabllo-vittar-cancela-apresentacao-no-cr-950x0-1.jpg class="col-sm-6 imagemPerfil img-responsive">
 				  </c:if>
             
-              <div class="col-xs-12 col-sm-6">
-                <dl class="dl-horizontal text-center">
-                  <dt><img src="https://png.icons8.com/color/50/000000/angel.png" alt="" class="img-responsive"></dt>
-                  <dd>${visitado.qtdAnjo}</dd>
-                  <dt><img src="https://png.icons8.com/color/50/000000/lucifer.png" alt="" class="img-responsive"></dt>
-                  <dd>${visitado.qtdDemonio}</dd>
-                  <dt><img src="https://png.icons8.com/flat_round/50/000000/question-mark.png" alt="" class="img-responsive"></dt>
-                  <dd>${visitado.qtdNeutro}</dd>
-                </dl>
+<!--               <div class="col-xs-12 col-sm-6"> -->
+<!--                 <dl class="dl-horizontal text-center"> -->
+<!--                   <dt><img src="https://png.icons8.com/color/50/000000/angel.png" alt="" class="img-responsive"></dt> -->
+<%--                   <dd>${visitado.qtdAnjo}</dd> --%>
+<!--                   <dt><img src="https://png.icons8.com/color/50/000000/lucifer.png" alt="" class="img-responsive"></dt> -->
+<%--                   <dd>${visitado.qtdDemonio}</dd> --%>
+<!--                   <dt><img src="https://png.icons8.com/flat_round/50/000000/question-mark.png" alt="" class="img-responsive"></dt> -->
+<%--                   <dd>${visitado.qtdNeutro}</dd> --%>
+<!--                 </dl> -->
+<!--               </div> -->
+              
+               <div class="col-xs-12 col-sm-6">            
+                  <a><img src="https://png.icons8.com/color/50/000000/angel.png" style="margin-right:85px;"></a><a>${visitado.qtdAnjo}</a>   
+                  <br>             
+                  <a><img src="https://png.icons8.com/color/50/000000/lucifer.png" style="margin-right:85px;"></a><a>${visitado.qtdDemonio}</a>   
+                  <br>  
+                  <a><img src="https://png.icons8.com/flat_round/50/000000/question-mark.png" style="margin-right:85px;"></a><a>${visitado.qtdNeutro}</a>
               </div>
               <div class="col-xs-12">
                 <dl class="dl-horizontal text-center">

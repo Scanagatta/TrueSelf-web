@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Busca</title>
-<meta charset="US-ASCII">
+    <title>Busca por usuário</title>
+<meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Andika" />
 		<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>" > 
 		<link rel="stylesheet" href="<c:url value='/css/style.css'/>" > 
@@ -29,7 +29,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><a href="home">Home</a></li>
-            <li><a href="perfil">Perfil</a></li>
+            <li><a href="perfil">Editar Perfil</a></li>
           </ul>
               <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -43,7 +43,7 @@
           </ul>
           <form class="navbar-form navbar-right" action="pesquisa">
             <div class="form-group">
-              <input name=nome type="text" class="form-control" placeholder="Buscar">
+              <input name=nome type="text" class="form-control" placeholder="Buscar usuário">
             </div>
           </form>
           </div><!-- /.navbar-collapse -->
@@ -56,8 +56,8 @@
              <table class="table table-stripped">
              	<c:forEach var="usuario" items="${usuarios}">
 				<tr>
-                 <td><img src="http://3.bp.blogspot.com/-9xy8lO8uqc8/VN_LdHA03ZI/AAAAAAAABZM/utxy8OgcS1c/s1600/usuario.png" 
-                 class="imagens imgBusca"><a href="visitante/${usuario.email}">${usuario.nome} - ${usuario.cidade.nome}</a></td>
+                 <td><a href="visitante/${usuario.email}"><img src="http://3.bp.blogspot.com/-9xy8lO8uqc8/VN_LdHA03ZI/AAAAAAAABZM/utxy8OgcS1c/s1600/usuario.png" 
+                 class="imagens imgBusca">${usuario.nome} - ${usuario.cidade.nome}</a></td>
                </tr>
 		</c:forEach>
                
