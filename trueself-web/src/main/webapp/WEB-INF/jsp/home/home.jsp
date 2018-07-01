@@ -87,34 +87,34 @@ pageEncoding="ISO-8859-1"%>
 							<!--                 </dl> -->
 							<!--               </div> -->
 							
-<!-- 							<div class="col-xs-12 col-sm-6"> -->
-<%-- 								<a><img src="https://png.icons8.com/color/50/000000/angel.png" style="margin-right:85px;"></a><a>${usuarioLogado.qtdAnjo}</a> --%>
-<!-- 								<br> -->
-<%-- 								<a><img src="https://png.icons8.com/color/50/000000/lucifer.png" style="margin-right:85px;"></a><a>${usuarioLogado.qtdDemonio}</a> --%>
-<!-- 								<br> -->
-<%-- 								<a><img src="http://i.imgur.com/rdp59lu.png" style="margin-right:85px;"></a><a>${usuarioLogado.qtdNeutro}</a> --%>
-<!-- 							</div> -->
+							<!-- 							<div class="col-xs-12 col-sm-6"> -->
+							<%-- 								<a><img src="https://png.icons8.com/color/50/000000/angel.png" style="margin-right:85px;"></a><a>${usuarioLogado.qtdAnjo}</a> --%>
+							<!-- 								<br> -->
+							<%-- 								<a><img src="https://png.icons8.com/color/50/000000/lucifer.png" style="margin-right:85px;"></a><a>${usuarioLogado.qtdDemonio}</a> --%>
+							<!-- 								<br> -->
+							<%-- 								<a><img src="http://i.imgur.com/rdp59lu.png" style="margin-right:85px;"></a><a>${usuarioLogado.qtdNeutro}</a> --%>
+							<!-- 							</div> -->
 							
-								<div class="table-responsive">
-									<table class="table table-hover">
-										<tr>
-											<td><a><img src="https://png.icons8.com/color/50/000000/angel.png" style="margin-right:85px;"></a></td>
-											<td class="a"><a>${usuarioLogado.qtdAnjo}</a></td>
-										</tr>
-								
-										<tr>
-											<td><a><img src="https://png.icons8.com/color/50/000000/lucifer.png" style="margin-right:85px;"></a></td>
-											<td class="a"><a class="a">${usuarioLogado.qtdDemonio}</a></td>
-										</tr>
-										
-										<tr>
-											<td><a><img src="http://i.imgur.com/rdp59lu.png" style="margin-right:85px;"></a></td>
-											<td class="a"><a>${usuarioLogado.qtdNeutro}</a></td>
-										</tr>
-									</table>
-								</div>
-								
+							<div class="table-responsive">
+								<table class="table table-hover">
+									<tr>
+										<td><a><img src="https://png.icons8.com/color/50/000000/angel.png" style="margin-right:85px;"></a></td>
+										<td class="a"><a>${usuarioLogado.qtdAnjo}</a></td>
+									</tr>
 									
+									<tr>
+										<td><a><img src="https://png.icons8.com/color/50/000000/lucifer.png" style="margin-right:85px;"></a></td>
+										<td class="a"><a class="a">${usuarioLogado.qtdDemonio}</a></td>
+									</tr>
+									
+									<tr>
+										<td><a><img src="http://i.imgur.com/rdp59lu.png" style="margin-right:85px;"></a></td>
+										<td class="a"><a>${usuarioLogado.qtdNeutro}</a></td>
+									</tr>
+								</table>
+							</div>
+							
+							
 							<div class="col-xs-12">
 								<dl class="dl-horizontal text-center">
 									<dt>Data de Nascimento</dt>
