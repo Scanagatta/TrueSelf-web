@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    
+pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -12,10 +10,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="theme-color" content="#FE654F"/>
 		<title>Alterar Senha</title>
-		<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>" > 
-		<link rel="stylesheet" href="<c:url value='/css/style.css'/>" > 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script type="text/javascript" src="<c:url value='/js/bootstrap.js'/>"></script>
+		<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>" >
+		<link rel="stylesheet" href="<c:url value='/css/style.css'/>" >
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
@@ -36,7 +32,7 @@
 						<li><a href="home">Home</a></li>
 						<li><a href="perfil">Editar Perfil</a></li>
 					</ul>
-						<ul class="nav navbar-nav navbar-right">
+					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${usuarioLogado.nome}<span class="caret"></span></a>
 							<ul class="dropdown-menu">
@@ -83,11 +79,15 @@
 									<input type="password" id="inputConfNewSenha" class="form-control"  placeholder="confirmar nova senha" name="usuario.confirmaSenha">
 								</div>
 								<div class="form-group">
-								<button class="btn btn-lg btn-cadastrar btn-block" type="submit" value="salvar">salvar</button>
+									<button class="btn btn-lg btn-cadastrar btn-block" type="submit" value="salvar">salvar</button>
 								</div>
 							</form>
 						</div>
 					</div>
 				</div>
-			</body>
-		</html>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="<c:url value='/js/bootstrap.js'/>"></script>
+	</body>
+</html>

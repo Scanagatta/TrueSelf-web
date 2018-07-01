@@ -10,11 +10,19 @@
 
 .imagemPerfil{
 	height: 180px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.a{
+	font-size: 18px;
 }
 
 .imgBusca{
-	width: 10%;
-	height: 10%;
+	width: 150px;
+	height: 150px;
 }
 
 @-moz-document url-prefix() {

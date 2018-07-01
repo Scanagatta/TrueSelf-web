@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-        
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    
+pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,13 +8,10 @@
 		<meta name = "Description" content = "App TrueSelf">
 		<meta http-equiv="Content-Language" content="pt-br">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="theme-color" content="#FE654F"/> 
+		<meta name="theme-color" content="#FE654F"/>
 		<title>Meu Perfil</title>
-		<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>" > 
-		<link rel="stylesheet" href="<c:url value='/css/style.css'/>" > 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script type="text/javascript" src="<c:url value='/js/jquery.mask.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='/js/bootstrap.js'/>"></script>
+		<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>" >
+		<link rel="stylesheet" href="<c:url value='/css/style.css'/>" >
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
@@ -37,7 +32,7 @@
 						<li><a href="home">Home</a></li>
 						<li class="active"><a href="#">Editar Perfil</a></li>
 					</ul>
-							<ul class="nav navbar-nav navbar-right">
+					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${usuarioLogado.nome}<span class="caret"></span></a>
 							<ul class="dropdown-menu">
@@ -75,106 +70,104 @@
 								<div class="form-group">
 									<label for="rdSexo">Sexo</label>
 									<div class="radio radio-inline" id="rdSexo">
-	
-										 
+										
+										
 										<label class="radio-inline">
 											<c:if test="${'masculino'== usuarioLogado.sexo}">
-												<input type="radio" name="usuario.sexo" id="inlineRadio1" value="masculino" checked="checked">
-											</c:if> 
+											<input type="radio" name="usuario.sexo" id="inlineRadio1" value="masculino" checked="checked">
+											</c:if>
 											<c:if test="${! ('masculino'== usuarioLogado.sexo)}">
-												<input type="radio" name="usuario.sexo" id="inlineRadio1" value="masculino">
-											</c:if> 
+											<input type="radio" name="usuario.sexo" id="inlineRadio1" value="masculino">
+											</c:if>
 										Masculino</label>
 										
 										<label class="radio-inline">
 											<c:if test="${'feminino'== usuarioLogado.sexo}">
-												<input type="radio" name="usuario.sexo" id="inlineRadio2" value="feminino" checked="checked">
-											</c:if> 
+											<input type="radio" name="usuario.sexo" id="inlineRadio2" value="feminino" checked="checked">
+											</c:if>
 											<c:if test="${! ('feminino'== usuarioLogado.sexo)}">
-												<input type="radio" name="usuario.sexo" id="inlineRadio2" value="feminino">
-											</c:if> 
+											<input type="radio" name="usuario.sexo" id="inlineRadio2" value="feminino">
+											</c:if>
 										Feminino</label>
 										
 										<label class="radio-inline">
 											<c:if test="${'outro'== usuarioLogado.sexo}">
-												<input type="radio" name="usuario.sexo" id="inlineRadio3" value="outro" checked="checked">
-											</c:if> 
+											<input type="radio" name="usuario.sexo" id="inlineRadio3" value="outro" checked="checked">
+											</c:if>
 											<c:if test="${! ('outro'== usuarioLogado.sexo)}">
-												<input type="radio" name="usuario.sexo" id="inlineRadio3" value="outro">
-											</c:if> 
+											<input type="radio" name="usuario.sexo" id="inlineRadio3" value="outro">
+											</c:if>
 										Outro</label>
-																			
+										
 										
 									</div>
 								</div>
-
 								<div class="form-group">
 									<label for="inputData">Data de Nascimento</label>
 									<input type="date" name="usuario.dataNascimento" id="inputData" class="form-control" value="${usuarioLogado.dataNascimento}" required="required"></input>
 								</div>
 								
-<!-- 								<div class="form-group"> -->
-<!-- 									<label for="inputEstadoCivil">Estado Civil</label> -->
-<%-- 									<input type="text" name="usuario.estadoCivil" id="inputEstadoCivil" class="form-control" placeholder="estado civil" value="${usuarioLogado.estadoCivil}"> --%>
-<!-- 								</div> -->
+								<!-- 								<div class="form-group"> -->
+								<!-- 									<label for="inputEstadoCivil">Estado Civil</label> -->
+								<%-- 									<input type="text" name="usuario.estadoCivil" id="inputEstadoCivil" class="form-control" placeholder="estado civil" value="${usuarioLogado.estadoCivil}"> --%>
+								<!-- 								</div> -->
 								
 								<div class="form-group">
 									<label for="inputEstadoCivil">Estado Civil</label>
-									<select name="usuario.estadoCivil" class="form-control select" id="selectEstadoCivil">	
+									<select name="usuario.estadoCivil" class="form-control select" id="selectEstadoCivil">
 										
 										<c:if test="${'solteiro' == usuarioLogado.estadoCivil}">
-											<option value="solteiro" selected="selected">solteiro</option>
-										</c:if> 
+										<option value="solteiro" selected="selected">solteiro</option>
+										</c:if>
 										<c:if test="${! ('solteiro'== usuarioLogado.estadoCivil)}">
-											<option value="solteiro">solteiro</option>
-										</c:if> 	
+										<option value="solteiro">solteiro</option>
+										</c:if>
 										
 										<c:if test="${'namorando' == usuarioLogado.estadoCivil}">
-											<option value="namorando" selected="selected">namorando</option>
-										</c:if> 
+										<option value="namorando" selected="selected">namorando</option>
+										</c:if>
 										<c:if test="${! ('namorando'== usuarioLogado.estadoCivil)}">
-											<option value="namorando">namorando</option>
-										</c:if> 	
+										<option value="namorando">namorando</option>
+										</c:if>
 										
 										<c:if test="${'casado' == usuarioLogado.estadoCivil}">
-											<option value="casado" selected="selected">casado</option>
-										</c:if> 
+										<option value="casado" selected="selected">casado</option>
+										</c:if>
 										<c:if test="${! ('casado'== usuarioLogado.estadoCivil)}">
-											<option value="casado">casado</option>
-										</c:if> 	
+										<option value="casado">casado</option>
+										</c:if>
 										
 										<c:if test="${'divorciado' == usuarioLogado.estadoCivil}">
-											<option value="divorciado" selected="selected">divorciado</option>
-										</c:if> 
+										<option value="divorciado" selected="selected">divorciado</option>
+										</c:if>
 										<c:if test="${! ('divorciado'== usuarioLogado.estadoCivil)}">
-											<option value="divorciado">divorciado</option>
-										</c:if> 
+										<option value="divorciado">divorciado</option>
+										</c:if>
 										
 										<c:if test="${'viúvo' == usuarioLogado.estadoCivil}">
-											<option value="viúvo" selected="selected">viúvo</option>
-										</c:if> 
+										<option value="viúvo" selected="selected">viúvo</option>
+										</c:if>
 										<c:if test="${! ('viúvo'== usuarioLogado.estadoCivil)}">
-											<option value="viúvo">viúvo</option>
-										</c:if> 
+										<option value="viúvo">viúvo</option>
+										</c:if>
 										
 									</select>
 								</div>
-
-									<div class="form-group">
-										<label for="selectCidade">Cidade</label>
-										<select  name="usuario.cidade.codigo" class="form-control select" id="selectCidade" required="required">
+								<div class="form-group">
+									<label for="selectCidade">Cidade</label>
+									<select  name="usuario.cidade.codigo" class="form-control select" id="selectCidade" required="required">
 										<c:forEach var="cidade" items="${cidades}">
 										
 										<c:if test="${cidade.codigo == usuarioLogado.cidade.codigo}">
-											<option value="${cidade.codigo}" selected="selected">${cidade.nome} - ${cidade.estado.nome}</option>
-										</c:if> 
+										<option value="${cidade.codigo}" selected="selected">${cidade.nome} - ${cidade.estado.nome}</option>
+										</c:if>
 										<c:if test="${! (cidade.codigo == usuarioLogado.cidade.codigo)}">
-											<option value="${cidade.codigo}">${cidade.nome} - ${cidade.estado.nome}</option>
+										<option value="${cidade.codigo}">${cidade.nome} - ${cidade.estado.nome}</option>
 										</c:if>
 										
 										</c:forEach>
-										</select>
-									</div>
+									</select>
+								</div>
 								
 								<div class="form-group">
 									<label for="inputTelefone">Telefone</label>
@@ -182,11 +175,16 @@
 									<script type="text/javascript">$("#inputTelefone").mask("(00) 0000-00009");</script>
 								</div>
 								<div class="form-group">
-								<button type="submit" class="btn btn-cadastrar" value="salvar">Salvar</button>
+									<button type="submit" class="btn btn-cadastrar" value="salvar">Salvar</button>
 								</div>
 							</form>
 						</div>
 					</div>
 				</div>
-			</body>
-		</html>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="<c:url value='/js/jquery.mask.min.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='/js/bootstrap.js'/>"></script>
+	</body>
+</html>

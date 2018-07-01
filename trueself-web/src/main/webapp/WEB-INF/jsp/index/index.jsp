@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-        
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    
+pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -12,27 +10,24 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="theme-color" content="#FE654F"/>
 		<title>Cadastre-se ou faça login no TrueSelf</title>
-		<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>" > 
-		<link rel="stylesheet" href="<c:url value='/css/style.css'/>" > 
+		<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>" >
+		<link rel="stylesheet" href="<c:url value='/css/style.css'/>" >
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script type="text/javascript" src="<c:url value='/js/bootstrap.js'/>"></script>
-			<script type="text/javascript" src="<c:url value='/js/js.js'/>"></script>
 	</head>
 	<body>
 		<div class="container-fluid">
 			<div class="row">
-			<div class="text col-xs-12">
+				<div class="text col-xs-12">
 					<h1>TrueSelf</h1>
 				</div>
 				<div class="col-xs-12 col-sm-6">
-				<img src="https://www.papeldeparede.etc.br/fotos/wp-content/uploads/bem_mal.jpg" alt="logo" class="img-responsive">	
+					<img src="https://www.papeldeparede.etc.br/fotos/wp-content/uploads/bem_mal.jpg" alt="logo" class="img-responsive">
 				</div>
 				<div class="col-xs-12 col-sm-6">
-				<ul class="nav nav-tabs col-xs-12 col-sm-6">
-					<li class="active col-xs-6"><a href="#first-tab" data-toggle="tab">Login</a></li>
-					<li class=" col-xs-6"><a href="#second-tab" data-toggle="tab">Cadastro</a></li>
-				</ul>
+					<ul class="nav nav-tabs col-xs-12 col-sm-6">
+						<li class="active col-xs-6"><a href="#first-tab" data-toggle="tab">Login</a></li>
+						<li class=" col-xs-6"><a href="#second-tab" data-toggle="tab">Cadastro</a></li>
+					</ul>
 				</div>
 				<div class="tab-content">
 					<div class="tab-pane active in" id="first-tab">
@@ -75,7 +70,7 @@
 					<div class="tab-pane" id="second-tab">
 						<div class="col-xs-12 col-sm-6 paginas">
 							<form action="cadastrar" method="post">
-							<hr>
+								<hr>
 								<div class="form-group">
 									<label for="inputNome" class="sr-only">Nome Completo</label>
 									<input id="inputNome" class="form-control" placeholder="nome completo" name="usuario.nome" required="required">
@@ -112,21 +107,27 @@
 				</div>
 			</div>
 			<div id="myModal" class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Termos de uso</h4>
-      </div>
-      <div class="modal-body">
-        <p>Este é um trabalho desenvolvido por acadêmicos da 5ª fase do curso de Tecnologia em Análise e Desenvolvimentos de Sistemas da UNOESC - Xanxerê <br><br> Ao aceitar os termos de uso e completar o cadastro, você está ciente de que esta é uma rede social pública e é crime realizar bullying virtual, tome cuidado! </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-cadastrar" data-dismiss="modal">Fechar</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title">Termos de uso</h4>
+						</div>
+						<div class="modal-body">
+							<p>Este é um trabalho desenvolvido por acadêmicos da 5ª fase do curso de Tecnologia em Análise e Desenvolvimentos de Sistemas da UNOESC - Xanxerê <br><br> Ao aceitar os termos de uso e completar o cadastro, você está ciente de que esta é uma rede social pública e é crime realizar bullying virtual, tome cuidado! </p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-cadastrar" data-dismiss="modal">Fechar</button>
+						</div>
+						</div><!-- /.modal-content -->
+						</div><!-- /.modal-dialog -->
+						</div><!-- /.modal -->
+					</div>
+				</div>
+			</div>
 		</div>
-</body>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="<c:url value='/js/bootstrap.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='/js/js.js'/>"></script>
+	</body>
 </html>
