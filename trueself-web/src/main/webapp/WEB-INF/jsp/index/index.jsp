@@ -47,15 +47,15 @@
 									<c:if test="${emailNaoExiste eq 'vazio'}">
 									<label class="erro">O email não existe, tente novamente ou cadastre-se</label>
 									</c:if>
-									<label for="inputEmail" class="sr-only">E-mail</label>
-									<input name="usuario.email" id="inputEmail" class="form-control" placeholder="e-mail" required="required" type="email">
+									<label for="inputEmailL" class="sr-only">E-mail</label>
+									<input name="usuario.email" id="inputEmailL" class="form-control" placeholder="e-mail" required="required" type="email">
 								</div>
 								<div class="form-group">
 									<c:if test="${senhaIncorreta eq 'vazia'}">
 									<label class="erro">A senha está incorreta</label>
 									</c:if>
-									<label for="inputPassword" class="sr-only">Senha</label>
-									<input name="usuario.senha" id="inputPassword" class="form-control" placeholder="senha" required="required" type="password">
+									<label for="inputPasswordL" class="sr-only">Senha</label>
+									<input name="usuario.senha" id="inputPasswordL" class="form-control" placeholder="senha" required="required" type="password">
 								</div>
 								<hr>
 								<div class="checkbox">
