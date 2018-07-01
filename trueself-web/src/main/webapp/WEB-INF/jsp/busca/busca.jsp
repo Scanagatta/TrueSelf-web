@@ -3,9 +3,14 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
+ 
   <head>
+  	<meta charset="UTF-8">
+	<meta name = "Description" content = "App TrueSelf">
+	<meta http-equiv="Content-Language" content="pt-br">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#FE654F"/> 
     <title>Busca por usuário</title>
-<meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Andika" />
 		<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>" > 
 		<link rel="stylesheet" href="<c:url value='/css/style.css'/>" > 

@@ -7,6 +7,10 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta name = "Description" content = "App TrueSelf">
+		<meta http-equiv="Content-Language" content="pt-br">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#FE654F"/>
 		<title>Cadastre-se ou faça login no TrueSelf</title>
 		<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>" > 
 		<link rel="stylesheet" href="<c:url value='/css/style.css'/>" > 
@@ -22,7 +26,7 @@
 					<h1>TrueSelf</h1>
 				</div>
 				<div class="col-xs-12 col-sm-6">
-				<img src="https://www.papeldeparede.etc.br/fotos/wp-content/uploads/bem_mal.jpg" class="img-responsive">	
+				<img src="https://www.papeldeparede.etc.br/fotos/wp-content/uploads/bem_mal.jpg" alt="logo" class="img-responsive">	
 				</div>
 				<div class="col-xs-12 col-sm-6">
 				<ul class="nav nav-tabs col-xs-12 col-sm-6">
