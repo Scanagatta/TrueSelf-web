@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Andika" />
 		<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>" > 
 		<link rel="stylesheet" href="<c:url value='/css/style.css'/>" > 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  		<script type="text/javascript" src="<c:url value='/js/bootstrap.js'/>"></script>
  		<script type="text/javascript" src="<c:url value='/js/js.js'/>"></script>
   </head>
@@ -92,7 +92,7 @@
                   <br>             
                   <a><img src="https://png.icons8.com/color/50/000000/lucifer.png" style="margin-right:85px;"></a><a>${usuarioLogado.qtdDemonio}</a>   
                   <br>  
-                  <a><img src="https://png.icons8.com/flat_round/50/000000/question-mark.png" style="margin-right:85px;"></a><a>${usuarioLogado.qtdNeutro}</a>
+                  <a><img src="http://i.imgur.com/rdp59lu.png" style="margin-right:85px;"></a><a>${usuarioLogado.qtdNeutro}</a>
               </div>
               <div class="col-xs-12">
                 <dl class="dl-horizontal text-center">
@@ -163,7 +163,7 @@
 											<c:if test="${! ('3'== comentario.classificacao)}">
 												<input type="radio" name="comentario.classificacao" id="inlineRadio3" value="3">
 											</c:if> 
-										<img src="https://png.icons8.com/flat_round/50/000000/question-mark.png" alt="" class="img-responsive">
+										<img src="http://i.imgur.com/rdp59lu.png" alt="" class="img-responsive">
 										</label>	
 									</div>
 									<button class="btn btn-cadastrar" style="margin-left: 10px">Avaliar</button>

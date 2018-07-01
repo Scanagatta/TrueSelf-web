@@ -86,7 +86,7 @@
                   <br>             
                   <a><img src="https://png.icons8.com/color/50/000000/lucifer.png" style="margin-right:85px;"></a><a>${visitado.qtdDemonio}</a>   
                   <br>  
-                  <a><img src="https://png.icons8.com/flat_round/50/000000/question-mark.png" style="margin-right:85px;"></a><a>${visitado.qtdNeutro}</a>
+                  <a><img src="http://i.imgur.com/rdp59lu.png" style="margin-right:85px;"></a><a>${visitado.qtdNeutro}</a>
               </div>
               <div class="col-xs-12">
                 <dl class="dl-horizontal text-center">

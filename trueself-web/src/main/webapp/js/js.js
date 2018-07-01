@@ -8,7 +8,7 @@ function carregarImagem(valor,imagem){
 	} else if (valor == 2){
 		imagem.src = "https://png.icons8.com/color/50/000000/lucifer.png";
 	} else {
-		imagem.src = "https://png.icons8.com/color/50/000000/question-mark.png";
+		imagem.src = "http://i.imgur.com/rdp59lu.png";
 	}
 }
 
