@@ -42,6 +42,7 @@ public class DadosUsuarioController {
 	public void alterar(Usuario usuario) {
 		usuario.setCodigo(IndexController.getUsuarioLogado().getCodigo());
 		usuario.setSenha(IndexController.getUsuarioLogado().getSenha());
+		usuario.setComentarios(IndexController.getUsuarioLogado().getComentarios());
 		dao.salvar(usuario);
 
 		IndexController.setUsuarioLogado(dao.pesquisarUsuario(usuario.getEmail()));
