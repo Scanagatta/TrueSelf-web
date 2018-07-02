@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -9,7 +9,7 @@ pageEncoding="ISO-8859-1"%>
 		<meta http-equiv="Content-Language" content="pt-br">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="theme-color" content="#FE654F"/>
-		<title>Cadastre-se ou faça login no TrueSelf</title>
+		<title>Cadastre-se ou faÃ§a login no TrueSelf</title>
 		<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>" >
 		<link rel="stylesheet" href="<c:url value='/css/style.css'/>" >
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -44,14 +44,14 @@ pageEncoding="ISO-8859-1"%>
 								<hr>
 								<div class="form-group">
 									<c:if test="${emailNaoExiste eq 'vazio'}">
-									<label class="erro">O email não existe, tente novamente ou cadastre-se</label>
+									<label class="erro">O email nÃ£o existe, tente novamente ou cadastre-se</label>
 									</c:if>
 									<label for="inputEmailL" class="sr-only">E-mail</label>
 									<input name="usuario.email" id="inputEmailL" class="form-control" placeholder="e-mail" required="required" type="email">
 								</div>
 								<div class="form-group">
 									<c:if test="${senhaIncorreta eq 'vazia'}">
-									<label class="erro">A senha está incorreta</label>
+									<label class="erro">A senha estÃ¡ incorreta</label>
 									</c:if>
 									<label for="inputPasswordL" class="sr-only">Senha</label>
 									<input name="usuario.senha" id="inputPasswordL" class="form-control" placeholder="senha" required="required" type="password">
@@ -77,7 +77,7 @@ pageEncoding="ISO-8859-1"%>
 								</div>
 								<div class="form-group">
 									<c:if test="${emailJaCadastrado eq 'vazio'}">
-									<label class="erro">O email já está sendo usado, tente outro</label>
+									<label class="erro">O email jÃ¡ estÃ¡ sendo usado, tente outro</label>
 									</c:if>
 									<label for="inputEmail" class="sr-only">E-mail</label>
 									<input id="inputEmail" class="form-control" placeholder="e-mail"  name="usuario.email" required="required" type="email">
@@ -88,7 +88,7 @@ pageEncoding="ISO-8859-1"%>
 								</div>
 								<div class="form-group">
 									<c:if test="${senhasDiferentes eq 'vazio'}">
-									<label class="erro">As senhas são diferentes</label>
+									<label class="erro">As senhas sÃ£o diferentes</label>
 									</c:if>
 									<label for="inputConfirmPassword" class="sr-only">Confirmar Senha</label>
 									<input id="inputConfirmPassword" class="form-control" placeholder="confirmar senha" required="required" type="password" name="usuario.confirmaSenha">
@@ -114,7 +114,7 @@ pageEncoding="ISO-8859-1"%>
 							<h4 class="modal-title">Termos de uso</h4>
 						</div>
 						<div class="modal-body">
-							<p>Este é um trabalho desenvolvido por acadêmicos da 5ª fase do curso de Tecnologia em Análise e Desenvolvimentos de Sistemas da UNOESC - Xanxerê <br><br> Ao aceitar os termos de uso e completar o cadastro, você está ciente de que esta é uma rede social pública e é crime realizar bullying virtual, tome cuidado! </p>
+							<p>Este Ã© um trabalho desenvolvido por acadÃªmicos da 5Âª fase do curso de Tecnologia em AnÃ¡lise e Desenvolvimentos de Sistemas da UNOESC - XanxerÃª <br><br> Ao aceitar os termos de uso e completar o cadastro, vocÃª estÃ¡ ciente de que esta Ã© uma rede social pÃºblica e Ã© crime realizar bullying virtual, tome cuidado! </p>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-cadastrar" data-dismiss="modal">Fechar</button>

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -46,7 +46,7 @@ pageEncoding="ISO-8859-1"%>
 					</ul>
 					<form class="navbar-form navbar-right" action="busca">
 						<div class="form-group">
-							<input name="nome" type="text" class="form-control" placeholder="Buscar usu·rio">
+							<input name="nome" type="text" class="form-control" placeholder="Buscar usu√°rio">
 						</div>
 					</form>
 					</div><!-- /.navbar-collapse -->
@@ -130,14 +130,14 @@ pageEncoding="ISO-8859-1"%>
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-6 infComentario">
-							<h1>Coment·rios</h1>
+							<h1>Coment√°rios</h1>
 							<div class="table-responsive">
 								<table class="table table-hover">
 									<thead>
 										<tr>
 											<td>Data</td>
-											<td>Coment·rio</td>
-											<td>AvaliaÁ„o</td>
+											<td>Coment√°rio</td>
+											<td>Avalia√ß√£o</td>
 										</tr>
 									</thead>
 									<c:forEach var="comentario" items="${visitado.comentarios}">

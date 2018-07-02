@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@ pageEncoding="ISO-8859-1"%>
 		<meta http-equiv="Content-Language" content="pt-br">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="theme-color" content="#FE654F"/>
-		<title>Busca por usu·rio</title>
+		<title>Busca por usu√°rio</title>
 		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Andika" />
 		<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>" >
 		<link rel="stylesheet" href="<c:url value='/css/style.css'/>" >
@@ -36,7 +36,7 @@ pageEncoding="ISO-8859-1"%>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario<span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${usuarioLogado.nome}<span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="alterarSenha">Alterar senha</a></li>
 								<li role="separator" class="divider"></li>
@@ -46,7 +46,7 @@ pageEncoding="ISO-8859-1"%>
 					</ul>
 					<form class="navbar-form navbar-right" action="pesquisa">
 						<div class="form-group">
-							<input name=nome type="text" class="form-control" placeholder="Buscar usu·rio">
+							<input name=nome type="text" class="form-control" placeholder="Buscar usu√°rio">
 						</div>
 					</form>
 					</div><!-- /.navbar-collapse -->

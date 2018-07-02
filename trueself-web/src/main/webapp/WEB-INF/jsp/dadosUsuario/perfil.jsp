@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -44,7 +44,7 @@ pageEncoding="ISO-8859-1"%>
 					</ul>
 					<form class="navbar-form navbar-right" action="busca">
 						<div class="form-group">
-							<input name="nome" type="search" class="form-control" placeholder="Buscar usuário">
+							<input name="nome" type="search" class="form-control" placeholder="Buscar usuÃ¡rio">
 						</div>
 					</form>
 					</div><!-- /.navbar-collapse -->
@@ -144,11 +144,11 @@ pageEncoding="ISO-8859-1"%>
 										<option value="divorciado">divorciado</option>
 										</c:if>
 										
-										<c:if test="${'viúvo' == usuarioLogado.estadoCivil}">
-										<option value="viúvo" selected="selected">viúvo</option>
+										<c:if test="${'viÃºvo' == usuarioLogado.estadoCivil}">
+										<option value="viÃºvo" selected="selected">viÃºvo</option>
 										</c:if>
-										<c:if test="${! ('viúvo'== usuarioLogado.estadoCivil)}">
-										<option value="viúvo">viúvo</option>
+										<c:if test="${! ('viÃºvo'== usuarioLogado.estadoCivil)}">
+										<option value="viÃºvo">viÃºvo</option>
 										</c:if>
 										
 									</select>

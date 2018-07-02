@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -44,7 +44,7 @@ pageEncoding="ISO-8859-1"%>
 					</ul>
 					<form class="navbar-form navbar-right" action="busca">
 						<div class="form-group">
-							<input name="nome" type="search" class="form-control" placeholder="Buscar usuário">
+							<input name="nome" type="search" class="form-control" placeholder="Buscar usuÃ¡rio">
 						</div>
 					</form>
 					</div><!-- /.navbar-collapse -->
@@ -60,7 +60,7 @@ pageEncoding="ISO-8859-1"%>
 							<form action="alterarSenha" method="post">
 								<div class="form-group">
 									<c:if test="${senhaIncorreta eq 'vazia'}">
-									<label class="erro">A senha antiga não é essa, tente novamente</label>
+									<label class="erro">A senha antiga nÃ£o Ã© essa, tente novamente</label>
 									<br>
 									</c:if>
 									<label for="inputOldSenha">Senha antiga</label>
@@ -72,7 +72,7 @@ pageEncoding="ISO-8859-1"%>
 								</div>
 								<div class="form-group">
 									<c:if test="${senhasDiferentes eq 'vazia'}">
-									<label class="erro">As senhas são diferentes, tente novamente</label>
+									<label class="erro">As senhas sÃ£o diferentes, tente novamente</label>
 									<br>
 									</c:if>
 									<label for="inputConfNewSenha">Confirmar nova senha</label>
