@@ -172,8 +172,7 @@ pageEncoding="UTF-8"%>
 								<div class="form-group">
 									<label for="inputTelefone">Telefone</label>
 									<input type="tel" name="usuario.telefone" id="inputTelefone" class="form-control" placeholder="telefone" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" value="${usuarioLogado.telefone}">
-									<script type="text/javascript">$("#inputTelefone").mask("(00) 0000-00009");</script>
-								</div>
+									</div>
 								<div class="form-group">
 									<button type="submit" class="btn btn-cadastrar" value="salvar">Salvar</button>
 								</div>
@@ -186,5 +185,6 @@ pageEncoding="UTF-8"%>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script type="text/javascript" src="<c:url value='/js/jquery.mask.min.js'/>"></script>
 		<script type="text/javascript" src="<c:url value='/js/bootstrap.js'/>"></script>
+		<script type="text/javascript">$("#inputTelefone").mask("(00) 0000-00009");</script>
 	</body>
 </html>
